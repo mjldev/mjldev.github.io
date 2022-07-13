@@ -4,7 +4,6 @@ import FeaturedBlogItem from "../components/Main/FeaturedBlogItem";
 import PopularProductItem from "../components/Main/PopularProductItem";
 import Footer from "../components/Footer/Footer";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import { Transition, animated, useSpring } from "react-spring";
 import BestSeller from "../components/Badge/BestSeller";
 
 export default function Home() {
