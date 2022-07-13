@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
 import FeaturedBlogItem from "../components/Blog/FeaturedBlogItem";
 import PopularProductItem from "../components/Product/PopularProductItem";
 import Footer from "../components/Footer/Footer";

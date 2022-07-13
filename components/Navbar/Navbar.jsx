@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import NavbarItem from "./NavbarItem";
-
-
 const Navbar = (props) => {
+
   // onClick & Scroll Navbar Anim
   const [navdropDown, setNavdropDown] = useState(0);
   const [navdropDownLink, setNavdropDownLink] = useState(0);
