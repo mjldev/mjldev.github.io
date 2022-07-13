@@ -6,6 +6,7 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import BestSeller from "../components/Badge/BestSeller";
 
 export default function Home() {
+
   return (
     <dev className="m-0">
       <Head>
