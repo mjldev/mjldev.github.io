@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
-import FeaturedBlogItem from "../components/Main/FeaturedBlogItem";
-import PopularProductItem from "../components/Main/PopularProductItem";
+import FeaturedBlogItem from "../components/Blog/FeaturedBlogItem";
+import PopularProductItem from "../components/Product/PopularProductItem";
 import Footer from "../components/Footer/Footer";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import BestSeller from "../components/Badge/BestSeller";
@@ -15,7 +15,7 @@ export default function Home() {
       <header>
         <ParallaxProvider>
           <Parallax speed={-10}>
-            <div className="flex items-center justify-center w-full min-h-screen bg-[url('https://picsum.photos/760/536?random-50')] bg-no-repeat bg-cover bg-center">
+            <div className="flex items-center justify-center w-full h-auto min-w-screen bg-[url('https://picsum.photos/760/536?random-50')] bg-no-repeat bg-cover bg-center relative">
               <div className="min-h-screen w-screen bg-black opacity-40" />
               <Parallax
                 speed={10}
@@ -32,7 +32,7 @@ export default function Home() {
       </header>
       <main className="flex flex-col justify-center bg-white px-4 md:px-10 lg:px-20 xl:px-40 py-4 md:py-4 lg:py-10 xl:py-20 relative">
         <div id="blog" className="flex flex-col justify-center min-h-screen">
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-8 ">
             <p className="font-bold text-4xl">Featured Blog</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-x-4 mb-12">

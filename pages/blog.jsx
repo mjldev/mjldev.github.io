@@ -6,7 +6,7 @@ import BlogItem from "../components/Blog/BlogItem";
 const blog = () => {
   return (
     <div>
-      <header className="flex justify-center w-full h-full bg-[url('https://picsum.photos/760/536?random-20')] bg-no-repeat bg-cover bg-center relative">
+      <header className="flex justify-center w-full h-auto min-w-screen bg-[url('https://picsum.photos/760/536?random-20')] bg-no-repeat bg-cover bg-center relative">
         <HeaderItem title="Blog" />
       </header>
       <main className="flex flex-col justify-center px-4 md:px-10 lg:px-20 xl:px-40 py-4 md:py-4 lg:py-10 xl:py-20 relative">

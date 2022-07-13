@@ -6,10 +6,8 @@ const FeaturedBlogItem = (props) => {
     <Link href="/product">
       <a className="flex flex-col justify-center border mb-2">
         <div className="flex">
-          <span className="absolute" best={props.badge}>
-            {props.badge}
-          </span>
-          <img className="w-full" src={props.img} alt={props.alt}>
+          <span badge={props.badge}>{props.badge}</span>
+          <img className="w-full h-full" src={props.img} alt={props.alt}>
             {props.children}
           </img>
         </div>

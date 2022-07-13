@@ -80,7 +80,7 @@ const Navbar = (props) => {
   return (
     <div
       id="navbar"
-      className="flex flex-col justify-center bg-white sticky top-0 z-50"
+      className="flex flex-col justify-center w-full h-auto min-w-screen bg-white sticky top-0 z-50"
     >
       <div className="flex-row justify-between items-center hidden md:flex lg:flex xl:flex px-8">
         <ul className="w-20 h-auto block p-2">
