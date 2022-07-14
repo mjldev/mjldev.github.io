@@ -88,10 +88,11 @@ const Navbar = (props) => {
               src="http://cdn.onlinewebfonts.com/svg/img_148071.png"
               alt="Sample Icon"
             />
+
           </NavbarItem>
         </ul>
-        <ul className="flex flex-row gap-x-4 p-4">
-          <NavbarItem url="/product">PRODUCT</NavbarItem>
+        <ul className="flex flex-row gap-x-8 p-4">
+          <NavbarItem url="/product">PRODUCTS</NavbarItem>
           <NavbarItem url="/blog">BLOG</NavbarItem>
           <NavbarItem url="/about-us">ABOUT US</NavbarItem>
           <NavbarItem url="/contact-us">CONTACT US</NavbarItem>
@@ -123,7 +124,7 @@ const Navbar = (props) => {
         className="hidden text-center bg-white w-screen top-16 p-4 absolute"
       >
         <ul onClick={navbarLink} className="flex flex-col gap-y-4">
-          <NavbarItem url="/product">PRODUCT</NavbarItem>
+          <NavbarItem url="/product">PRODUCTs</NavbarItem>
           <NavbarItem url="/blog">BLOG</NavbarItem>
           <NavbarItem url="/about-us">ABOUT US</NavbarItem>
           <NavbarItem url="/contact-us">CONTACT US</NavbarItem>

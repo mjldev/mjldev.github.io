@@ -11,19 +11,19 @@ const ProductItem = (props) => {
             {props.children}
           </img>
         </div>
-        <div className="flex flex-col p-2">
-          <p className="font-bold text-sm my-1" description={props.description}>
+        <div className="flex flex-col p-3">
+          <p className="text-md my-1" description={props.description}>
             {props.description}
           </p>
-          <p className="text-sm mb-1" price={props.price}>
+          <p className="text-sm text-gray-400 mb-1" price={props.price}>
             {props.price}
           </p>
           <span className="mt-4 mb-2">
             <ProductLink
-              className="text-gray-700 text-xs font-bold rounded-full bg-yellow-400 px-4 py-2"
+              className="text-white text-xs bg-gray-700 hover:opacity-90 px-4 py-2"
               url="/contact-us"
             >
-              Order Now
+              ORDER NOW
             </ProductLink>
           </span>
         </div>
