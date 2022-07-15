@@ -1,12 +1,13 @@
 import React from "react";
-import FooterImageLink from "./FooterImageLink";
+// import FooterImageLink from "./FooterImageLink";
 import FooterItem from "./FooterItem";
 
 const Footer = (props) => {
   return (
-    <footer className="flex flex-col justify-center bg-gray-700 relative">
-      <div className="container flex flex-col justify-center text-center items-center p-10">
-        {/* <div className="flex gap-x-4 mb-5">
+    <div>
+      <footer className="flex flex-col justify-center bg-gray-700 relative">
+        <div className="container flex flex-col justify-center text-center items-center p-10">
+          {/* <div className="flex gap-x-4 mb-5">
           <div>
             <FooterImageLink
               url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Facebook-icon-1.png/640px-Facebook-icon-1.png"
@@ -20,9 +21,10 @@ const Footer = (props) => {
             />
           </div>
         </div> */}
-        <FooterItem copyright="Copyright 2022 © Sample Website" />
-      </div>
-    </footer>
+          <FooterItem copyright="Copyright 2022 © Sample Website" />
+        </div>
+      </footer>
+    </div>
   );
 };
 

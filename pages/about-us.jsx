@@ -8,12 +8,7 @@ const aboutUs = () => {
         <HeaderItem title="About Us" />
       </header>
       <main className="flex flex-col justify-center px-4 md:px-10 lg:px-20 xl:px-40 py-4 md:py-4 lg:py-10 xl:py-20 relative min-h-screen">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus
-          architecto recusandae deleniti fugiat laudantium iusto rem ut ea
-          animi, non dolore voluptate ipsum. Eos reprehenderit, debitis ad
-          eveniet iusto officiis!
-        </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur id explicabo aspernatur cumque, excepturi nam dolore sequi suscipit dolor quam minus accusantium quasi qui veniam maiores eos unde molestias nemo.</p>
       </main>
       <Footer />
     </div>

@@ -8,8 +8,34 @@ import MainTitle from "../components/Main/MainTitle";
 import FadeIn from "../components/anim/FadeIn";
 import FadeInTrailBlog from "../components/Anim/FadeInTrailBlog";
 import FadeInTrailProduct from "../components/Anim/FadeInTrailProduct";
+import { useState } from "react";
 
 export default function Home() {
+  const [state, setState] = useState(0);
+  const [errorMsg, seterrorMsg] = useState("");
+  // 0 - initial , 1 - loading, 2 - success, 2 - error
+  const subscribe = async (e) => {
+    e.preventDefault();
+
+    setState(1);
+    seterrorMsg("");
+    console.log(e.target[0].value);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        body: e.target[0].value,
+      });
+
+      const data = await res.json();
+      if (data.error !== null) {
+        throw data.error;
+      }
+      setState(2);
+    } catch (e) {
+      seterrorMsg(e);
+      setState(3);
+    }
+  };
   return (
     <dev className="m-0">
       <Head>
@@ -143,25 +169,20 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center w-full items-center bg-gray-100 relative">
-          <FadeIn>
-            <div className="flex flex-col justify-cente text-center px-4 md:px-20 lg:px-40 xl:px-60 py-4 md:py-10 lg:py-20 xl:py-40">
-              <p className="text-3xl lg:text-4xl xl:text-4xl mb-4">
-                Sign up for our newsletter
-              </p>
-              <p className="text-gray-400 mb-4">
-                Sign up to receive updates from our shop, including new
-                products, blog and upcoming sale.
-              </p>
-              <div>
-                <input className="text-sm border mr-1 py-2 px-4" type="text" />
-                <button className="bg-gray-700 text-sm text-white hover:opacity-90 py-2 px-4">
-                  SUBMIT
-                </button>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
+        <div>
+      {state == 2 ? (
+        <p className="font-medium mt-4 text-xl text-green-800">
+          Thanks for subscribing, you will receive mail once we launch our
+          website.
+        </p>
+      ) : (
+        <form onSubmit={subscribe} className="flex flex-col mb-9 mt-4">
+          <input required placeholder="Email address" type="email" />
+          <button type="submit">Subscribe</button>
+          {state === 3 ? <p className="text-red-500 mt-3">{errorMsg}</p> : ""}
+        </form>
+      )}
+    </div>
       </main>
       <Footer />
     </dev>
