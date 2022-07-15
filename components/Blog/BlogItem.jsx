@@ -9,7 +9,7 @@ const BlogItem = (props) => {
       <p className="text-lg mt-2" title={props.title}>
         {props.title}
       </p>
-      <p className="text-gray-400 my-2" text={props.text}>
+      <p className="tex-md text-gray-400 my-2" text={props.text}>
         {props.text}
       </p>
     </div>

@@ -124,7 +124,7 @@ const Navbar = (props) => {
         className="hidden text-center bg-white w-screen top-16 p-4 absolute"
       >
         <ul onClick={navbarLink} className="flex flex-col gap-y-4">
-          <NavbarItem url="/product">PRODUCTs</NavbarItem>
+          <NavbarItem url="/product">PRODUCTS</NavbarItem>
           <NavbarItem url="/blog">BLOG</NavbarItem>
           <NavbarItem url="/about-us">ABOUT US</NavbarItem>
           <NavbarItem url="/contact-us">CONTACT US</NavbarItem>
