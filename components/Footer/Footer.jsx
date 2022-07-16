@@ -1,10 +1,14 @@
 import React from "react";
 // import FooterImageLink from "./FooterImageLink";
 import FooterItem from "./FooterItem";
+import NewsletterSubscribe from './NewsletterSubscribe';
 
 const Footer = (props) => {
   return (
     <div>
+      <div>
+        <NewsletterSubscribe/>
+      </div>
       <footer className="flex flex-col justify-center bg-gray-700 relative">
         <div className="container flex flex-col justify-center text-center items-center p-10">
           {/* <div className="flex gap-x-4 mb-5">
