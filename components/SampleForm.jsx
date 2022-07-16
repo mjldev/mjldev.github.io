@@ -27,22 +27,6 @@ const SampleForm = ({ status, message, onValidated }) => {
   };
 
   /**
-   * Handle Input Key Event.
-   *
-   * @param event
-   */
-  const handleInputKeyEvent = (event) => {
-    setError(null);
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      handleFormSubmit();
-    }
-  };
-
-  /**
    * Extract message from string.
    *
    * @param {String} message
@@ -68,10 +52,12 @@ const SampleForm = ({ status, message, onValidated }) => {
         validate={(values) => {
           const errors = {};
           if (!values.email) {
+            setError(null);
             errors.email = "Required";
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
+            setError(null);
             errors.email = "Invalid email address";
           }
           return errors;
@@ -79,7 +65,8 @@ const SampleForm = ({ status, message, onValidated }) => {
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             const errors = {};
-            // setError(null);
+
+            handleFormSubmit();
             // setSubmitting(false);
           }, 400);
         }}
@@ -93,7 +80,6 @@ const SampleForm = ({ status, message, onValidated }) => {
               name="email"
               placeholder="Enter Email Address"
               required
-              onKeyUp={(event) => handleInputKeyEvent(event)}
             />
             <button
               className="bg-gray-700 text-white py-2 px-4"
@@ -111,15 +97,6 @@ const SampleForm = ({ status, message, onValidated }) => {
                   message="Sending..."
                   contentColorClass="text-white"
                   hasVisibilityToggle={false}
-                />
-              ) : null}
-              {"error" === status || error ? (
-                <div
-                  className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
-                  role="alert"
-                  dangerouslySetInnerHTML={{
-                    __html: error || getMessage(message),
-                  }}
                 />
               ) : null}
               {"success" === status && "error" !== status && !error && (
