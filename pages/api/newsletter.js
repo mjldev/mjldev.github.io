@@ -1,51 +1,50 @@
 import axios from "axios";
 
 function getRequestParams(email) {
-    const API_KEY = process.env.REACT_APP_MAILCHIMP_API_KEY;
-    const LIST_ID = process.env.REACT_APP_MAILCHIMP_LIST_ID;
+   // get env variables
+  const API_KEY = process.env.MAILCHIMP_API_KEY;
+  const LIST_ID = process.env.MAILCHIMP_LIST_ID;
+  // mailchimp datacenter - mailchimp api keys always look like this:
+  // fe4f064432e4684878063s83121e4971-us6
+  // We need the us6 part
+  const DATACENTER = process.env.MAILCHIMP_API_KEY.split("-")[1];
+
+  const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
   
-    const DATACENTER = API_KEY.split("-")[1];
-    const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
-  
-    const data = {
-      email_address: email,
-      status: "subscribed",
-    };
-  
-    const base64ApiKey = Buffer.from(`anystring:${API_KEY}`).toString("base64");
-    const headers = {
-      "Content-Type": "application/json",
-      Authorization: `Basic ${base64ApiKey}`,
-    };
+  const data = {
+    email_address: email,
+    status: "subscribed",
+  };
+
+  // Api key needs to be encoded in base 64 format
+  const base64ApiKey = Buffer.from(`anystring:${API_KEY}`).toString("base64");
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: `Basic ${base64ApiKey}`,
+  };
   
     return { url, data, headers };
 }  
 
 export default async function handler(req, res) {
   const email = req.body;
-
+  
   if (!email || !email.length) {
-    res.status(200).json({ error: "Please enter a email address" });
+    return res.status(400).json({
+      error: "Forgot to add your email?",
+    });
   }
-  try {
+
+   try {
     const { url, data, headers } = getRequestParams(email);
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify({
-        email_address: data.email_address,
-        status: data.status,
-      }),
-    });
+    const response = await axios.post(url, data, { headers });
 
-    res.status(200).json({
-      error: null,
-    });
-  } catch (err) {
-    res.status(400).json({
-      error:
-        "Please try again!!",
+    return res.status(201).json({ error: null });
+
+   } catch (error) {
+    return res.status(400).json({
+      error: `Oops, something went wrong... Send me an email at uriklar@gmail.com and I'll add you to the list.`,
     });
   }
 }
