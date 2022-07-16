@@ -10,7 +10,9 @@ import FadeInTrailBlog from "../components/Anim/FadeInTrailBlog";
 import FadeInTrailProduct from "../components/Anim/FadeInTrailProduct";
 import { useState } from "react";
 
+
 export default function Home() {
+
   const [state, setState] = useState(0);
   const [errorMsg, seterrorMsg] = useState("");
   // 0 - initial , 1 - loading, 2 - success, 2 - error

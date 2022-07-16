@@ -1,6 +1,6 @@
 function getRequestParams(email) {
-    const API_KEY = process.env.MAILCHIMP_API_KEY;
-    const LIST_ID = process.env.MAILCHIMP_LIST_ID;
+    const API_KEY = process.env.REACT_APP_MAILCHIMP_API_KEY;
+    const LIST_ID = process.env.REACT_APP_MAILCHIMP_LIST_ID;
   
     const DATACENTER = API_KEY.split("-")[1];
     const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;

@@ -3,7 +3,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="m-0">
+    <div>
       <Navbar />
       <Component {...pageProps} />
     </div>
