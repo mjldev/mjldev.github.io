@@ -71,7 +71,7 @@ const SampleForm = ({ status, message, onValidated }) => {
             <button
               className="bg-gray-700 text-white py-2 px-4"
               type="submit"
-              disabled={isSubmitting}
+              onClick={handleFormSubmit}
             >
               Submit
             </button>{" "}
