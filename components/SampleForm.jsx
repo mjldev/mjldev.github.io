@@ -7,9 +7,9 @@ const SampleForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState(null);
 
-  const handleOnChange = (event) => {
-    {(event) => setEmail(event?.target?.value ?? "")}
-};
+//   const handleOnChange = (event) => {
+//     setEmail(event?.target?.value ?? "")
+// };
 
   const handleFormSubmit = () => {
     setError(null);
@@ -53,8 +53,8 @@ const SampleForm = ({ status, message, onValidated }) => {
       <h1>Subscribe to Newsletter</h1>
       <Formik
         initialValues={{ email: "" }}
-        validate={(values) => {
-          {(event) => setEmail(event?.target?.value ?? "")}
+        validate={(values,event) => {
+          setEmail(event?.target?.value ?? "")
           const errors = {};
           if (!values.email) {
             errors.email = "Required";
@@ -72,7 +72,7 @@ const SampleForm = ({ status, message, onValidated }) => {
         }}
       >
         {({ isSubmitting }) => (
-          <Form onChange={handleOnChange}>
+          <Form >
             <Field
               className="border border-gray-700 py-2 px-4"
               type="email"
