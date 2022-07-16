@@ -6,9 +6,9 @@ import NewsletterSubscribe from './NewsletterSubscribe';
 const Footer = (props) => {
   return (
     <div>
-      <div className="flex justify-center items-center py-20 bg-gray-100">
+      {/* <div className="flex justify-center items-center py-20 bg-gray-100">
         <NewsletterSubscribe/>
-      </div>
+      </div> */}
       <footer className="flex flex-col justify-center bg-gray-700 relative">
         <div className="container flex flex-col justify-center text-center items-center p-10">
           {/* <div className="flex gap-x-4 mb-5">
