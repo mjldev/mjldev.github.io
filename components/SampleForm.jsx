@@ -7,6 +7,11 @@ const SampleForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState(null);
 
+  /**
+   * Handle form submit.
+   *
+   * @return {{value}|*|boolean|null}
+   */
   const handleFormSubmit = () => {
     setError(null);
 
@@ -21,7 +26,12 @@ const SampleForm = ({ status, message, onValidated }) => {
     return email && email.indexOf("@") > -1 && isFormValidated;
   };
 
-    const handleInputKeyEvent = (event) => {
+  /**
+   * Handle Input Key Event.
+   *
+   * @param event
+   */
+  const handleInputKeyEvent = (event) => {
     setError(null);
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
@@ -32,7 +42,12 @@ const SampleForm = ({ status, message, onValidated }) => {
     }
   };
 
-
+  /**
+   * Extract message from string.
+   *
+   * @param {String} message
+   * @return {null|*}
+   */
   const getMessage = (message) => {
     if (!message) {
       return null;
@@ -59,16 +74,12 @@ const SampleForm = ({ status, message, onValidated }) => {
           ) {
             errors.email = "Invalid email address";
           }
-          setEmail(event?.target?.value ?? "")
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             const errors = {};
-            setError(null);
-
-            // Trigger the button element with a click
-            handleFormSubmit();
+            // setError(null);
             // setSubmitting(false);
           }, 400);
         }}
