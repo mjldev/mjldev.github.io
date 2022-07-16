@@ -7,33 +7,8 @@ const SampleForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState(null);
 
-//   const handleOnChange = (event) => {
-//     setEmail(event?.target?.value ?? "")
-// };
-
-  const handleFormSubmit = () => {
-    setError(null);
-
-    if (!email) {
-      setError("Please enter a valid email address");
-      return null;
-    }
-
-    const isFormValidated = onValidated({ EMAIL: email });
-
-    // On success return true
-    return email && email.indexOf("@") > -1 && isFormValidated;
-  };
-
-  const handleInputKeyEvent = (event) => {
-    setError(null);
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      handleFormSubmit();
-    }
+  const handleOnChange = (event) => {
+    setEmail(event?.target?.value ?? "");
   };
 
   const getMessage = (message) => {
@@ -53,39 +28,43 @@ const SampleForm = ({ status, message, onValidated }) => {
       <h1>Subscribe to Newsletter</h1>
       <Formik
         initialValues={{ email: "" }}
-        validate={(values,event) => {
-          setEmail(event?.target?.value ?? "")
+        validate={(values) => {
+          setError(null);
           const errors = {};
           if (!values.email) {
             errors.email = "Required";
+            
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = "Invalid email address";
+           
           }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => { 
-            // setSubmitting(false);
+          setTimeout(() => {
+            setError(null);
+            if (!email) {
+              setError("Please enter a valid email address");
+              return null;
+            }
+            const isFormValidated = onValidated({ EMAIL: email });
+            return email && email.indexOf("@") > -1 && isFormValidated;
+            setSubmitting(false);
           }, 400);
         }}
       >
         {({ isSubmitting }) => (
-          <Form >
+          <Form onChange={handleOnChange}>
             <Field
               className="border border-gray-700 py-2 px-4"
               type="email"
               name="email"
               placeholder="Enter Email Address"
               required
-              onKeyUp={(event) => handleInputKeyEvent(event)}
             />
-            <button
-              className="bg-gray-700 text-white py-2 px-4"
-              type="submit"
-              onClick={handleFormSubmit}
-            >
+            <button className="bg-gray-700 text-white py-2 px-4" type="submit">
               Submit
             </button>{" "}
             <ErrorMessage name="email" component="div" />
