@@ -7,11 +7,6 @@ const SampleForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState(null);
 
-  /**
-   * Handle form submit.
-   *
-   * @return {{value}|*|boolean|null}
-   */
   const handleFormSubmit = () => {
     setError(null);
 
@@ -26,12 +21,17 @@ const SampleForm = ({ status, message, onValidated }) => {
     return email && email.indexOf("@") > -1 && isFormValidated;
   };
 
-  /**
-   * Extract message from string.
-   *
-   * @param {String} message
-   * @return {null|*}
-   */
+    const handleInputKeyEvent = (event) => {
+    setError(null);
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      handleFormSubmit();
+    }
+  };
+
   const getMessage = (message) => {
     if (!message) {
       return null;
@@ -52,12 +52,10 @@ const SampleForm = ({ status, message, onValidated }) => {
         validate={(values) => {
           const errors = {};
           if (!values.email) {
-            setError(null);
             errors.email = "Required";
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
-            setError(null);
             errors.email = "Invalid email address";
           }
           return errors;
@@ -65,7 +63,9 @@ const SampleForm = ({ status, message, onValidated }) => {
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             const errors = {};
+            setError(null);
 
+            // Trigger the button element with a click
             handleFormSubmit();
             // setSubmitting(false);
           }, 400);
@@ -74,12 +74,12 @@ const SampleForm = ({ status, message, onValidated }) => {
         {({ isSubmitting }) => (
           <Form>
             <Field
-              onChangeText={(event) => setEmail(event?.target?.value ?? "")}
               className="border border-gray-700 py-2 px-4"
               type="email"
               name="email"
               placeholder="Enter Email Address"
               required
+              onKeyUp={(event) => handleInputKeyEvent(event)}
             />
             <button
               className="bg-gray-700 text-white py-2 px-4"
@@ -97,6 +97,15 @@ const SampleForm = ({ status, message, onValidated }) => {
                   message="Sending..."
                   contentColorClass="text-white"
                   hasVisibilityToggle={false}
+                />
+              ) : null}
+              {"error" === status || error ? (
+                <div
+                  className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
+                  role="alert"
+                  dangerouslySetInnerHTML={{
+                    __html: error || getMessage(message),
+                  }}
                 />
               ) : null}
               {"success" === status && "error" !== status && !error && (
