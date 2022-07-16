@@ -8,8 +8,9 @@ const SampleForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState(null);
 
   const handleOnChange = (event) => {
-    console.log("Form::onChange", event);
+    {(event) => setEmail(event?.target?.value ?? "")}
 };
+
   const handleFormSubmit = () => {
     setError(null);
 
@@ -66,17 +67,13 @@ const SampleForm = ({ status, message, onValidated }) => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => { 
-            handleFormSubmit();
-            const errors = {};
-            return errors;
             // setSubmitting(false);
           }, 400);
         }}
       >
         {({ isSubmitting }) => (
-          <Form>
+          <Form onChange={handleOnChange}>
             <Field
-              // onChange={(event) => setEmail(event?.target?.value ?? "")}
               className="border border-gray-700 py-2 px-4"
               type="email"
               name="email"
