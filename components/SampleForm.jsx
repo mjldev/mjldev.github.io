@@ -21,6 +21,18 @@ const SampleForm = ({ status, message, onValidated }) => {
     return email && email.indexOf("@") > -1 && isFormValidated;
   };
 
+  const handleInputKeyEvent = (event) => {
+    setError(null);
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      handleFormSubmit();
+    }
+  };
+
+
   const getMessage = (message) => {
     if (!message) {
       return null;
@@ -51,6 +63,8 @@ const SampleForm = ({ status, message, onValidated }) => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
+            const errors = {};
+            setError(null);
 
             // Trigger the button element with a click
             handleFormSubmit();
@@ -66,11 +80,13 @@ const SampleForm = ({ status, message, onValidated }) => {
               name="email"
               placeholder="Enter Email Address"
               required
+              onKeyUp={(event) => handleInputKeyEvent(event)}
             />
             <button
               className="bg-gray-700 text-white py-2 px-4"
               type="submit"
-              disabled={isSubmitting}
+              onClick={handleFormSubmit}
+              // disabled={isSubmitting}
             >
               Submit
             </button>{" "}
