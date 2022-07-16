@@ -50,10 +50,9 @@ const SampleForm = ({ status, message, onValidated }) => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            const errors = {};
-
+          setTimeout(() => { 
             handleFormSubmit();
+            const errors = {};
             return errors;
             // setSubmitting(false);
           }, 400);
