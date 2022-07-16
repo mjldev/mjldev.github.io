@@ -21,7 +21,7 @@ const SampleForm = ({ status, message, onValidated }) => {
     return email && email.indexOf("@") > -1 && isFormValidated;
   };
 
-  const handleInputKeyEvent = (event) => {
+    const handleInputKeyEvent = (event) => {
     setError(null);
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
@@ -59,6 +59,7 @@ const SampleForm = ({ status, message, onValidated }) => {
           ) {
             errors.email = "Invalid email address";
           }
+          setEmail(event?.target?.value ?? "")
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -75,6 +76,7 @@ const SampleForm = ({ status, message, onValidated }) => {
         {({ isSubmitting }) => (
           <Form>
             <Field
+              onChangeText={(event) => setEmail(event?.target?.value ?? "")}
               className="border border-gray-700 py-2 px-4"
               type="email"
               name="email"
