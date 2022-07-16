@@ -25,7 +25,7 @@ const Footer = (props) => {
             />
           </div>
         </div> */}
-          <FooterItem copyright="Copyright 2022 © Sample Website" />
+          <FooterItem text="Copyright 2022 © Sample Store" />
         </div>
       </footer>
     </div>

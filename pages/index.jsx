@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <dev className="m-0">
       <Head>
-        <title>Sample Website</title>
+        <title>Sample Store</title>
       </Head>
       <header>
         <ParallaxProvider>
