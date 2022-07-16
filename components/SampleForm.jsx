@@ -62,7 +62,7 @@ const SampleForm = ({ status, message, onValidated }) => {
         {({ isSubmitting }) => (
           <Form>
             <Field
-            onChange={(event) => setEmail(event?.target?.value ?? "")}
+              onChangeText={(event) => setEmail(event?.target?.value ?? "")}
               className="border border-gray-700 py-2 px-4"
               type="email"
               name="email"
