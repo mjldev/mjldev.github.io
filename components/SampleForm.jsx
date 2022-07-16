@@ -31,7 +31,7 @@ const SampleForm = ({ status, message, onValidated }) => {
       handleFormSubmit();
     }
   };
-
+  
 
   const getMessage = (message) => {
     if (!message) {
@@ -61,18 +61,10 @@ const SampleForm = ({ status, message, onValidated }) => {
           }
           return errors;
         }}
-        onSubmit={(values, event, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             const errors = {};
             setError(null);
-            // Number 13 is the "Enter" key on the keyboard
-            if (event.keyCode === 13) {
-              // Cancel the default action, if needed
-              event.preventDefault();
-              // Trigger the button element with a click
-              handleInputKeyEvent();
-            }
-            return errors;
             // setSubmitting(false);
           }, 400);
         }}
@@ -84,6 +76,7 @@ const SampleForm = ({ status, message, onValidated }) => {
               type="email"
               name="email"
               placeholder="Enter Email Address"
+              onKeyUp={(event) => handleInputKeyEvent(event)}
               required
             />
             <button
