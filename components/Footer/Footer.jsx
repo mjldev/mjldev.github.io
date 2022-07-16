@@ -6,7 +6,7 @@ import NewsletterSubscribe from './NewsletterSubscribe';
 const Footer = (props) => {
   return (
     <div>
-      <div>
+      <div className="flex justify-center items-center py-20 bg-gray-100">
         <NewsletterSubscribe/>
       </div>
       <footer className="flex flex-col justify-center bg-gray-700 relative">
