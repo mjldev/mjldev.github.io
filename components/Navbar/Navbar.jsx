@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import NavbarItem from "./NavbarItem";
 const Navbar = (props) => {
-
   // onClick & Scroll Navbar Anim
   const [navdropDown, setNavdropDown] = useState(0);
   const [navdropDownLink, setNavdropDownLink] = useState(0);
@@ -44,10 +43,9 @@ const Navbar = (props) => {
   const controlNavbar = () => {
     if (window.innerWidth < windowWidth) {
       if (window.scrollY > lastScrollY) {
-        document.getElementById("navbar").style.top = "-150px";
         document.getElementById("navbarLinks").style.display = "none";
       } else {
-        document.getElementById("navbar").style.top = "0";
+        document.getElementById("navbarLinks").style.display = "none";
       }
       setLastScrollY(window.scrollY);
     } else {
@@ -88,7 +86,6 @@ const Navbar = (props) => {
               src="http://cdn.onlinewebfonts.com/svg/img_148071.png"
               alt="Sample Icon"
             />
-
           </NavbarItem>
         </ul>
         <ul className="flex flex-row gap-x-8 p-4">

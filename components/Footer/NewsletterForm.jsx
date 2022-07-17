@@ -1,52 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { sanitize } from "../Utils/Miscellaneous";
 import Loading from "../Loading/Loading";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
-const NewsletterForm = ({ status, message, onValidated }) => {
+const SampleForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState(null);
 
-  /**
-   * Handle form submit.
-   *
-   * @return {{value}|*|boolean|null}
-   */
-  const handleFormSubmit = () => {
-    setError(null);
-
-    if (!email) {
-      setError("Please enter a valid email address");
-      return null;
-    }
-
-    const isFormValidated = onValidated({ EMAIL: email });
-
-    // On success return true
-    return email && email.indexOf("@") > -1 && isFormValidated;
+  const handleOnChange = (event) => {
+    setEmail(event?.target?.value ?? "");
   };
 
-  /**
-   * Handle Input Key Event.
-   *
-   * @param event
-   */
-  const handleInputKeyEvent = (event) => {
-    setError(null);
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      handleFormSubmit();
-    }
-  };
-
-  /**
-   * Extract message from string.
-   *
-   * @param {String} message
-   * @return {null|*}
-   */
   const getMessage = (message) => {
     if (!message) {
       return null;
@@ -60,51 +24,84 @@ const NewsletterForm = ({ status, message, onValidated }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center text-center px-4 xl:px-60">
       <p className="text-2xl lg:text-3xl xl:text-3xl mb-3">
-        Subscribe to Newsletter
+        Subscribe to our Newsletter
       </p>
-      <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row justify-center items-center">
-        <input
-          onChange={(event) => setEmail(event?.target?.value ?? "")}
-          type="email"
-          placeholder="Enter Email Address"
-          className="appearance-none border border-gray-400 border-b block pl-4 pr-6 py-2 w-full bg-white text-sm placeholder-gray-500 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"
-          onKeyUp={(event) => handleInputKeyEvent(event)}
-        />
-        <button
-          className="cursor-pointer	text-white bg-gray-700 border-0 py-2 px-5 focus:outline-none hover:opacity-90"
-          onClick={handleFormSubmit}
-        >
-          Submit
-        </button>
-      </div>
-      <div className="min-h-42px">
-        {"sending" === status ? (
-          <Loading
-            showSpinner
-            message="Sending..."
-            contentColorClass="text-white"
-            hasVisibilityToggle={false}
-          />
-        ) : null}
-        {"error" === status || error ? (
-          <div
-            className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
-            role="alert"
-            dangerouslySetInnerHTML={{ __html: error || getMessage(message) }}
-          />
-        ) : null}
-        {"success" === status && "error" !== status && !error && (
-          <div
-            className="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
-            role="alert"
-            dangerouslySetInnerHTML={{ __html: sanitize(message) }}
-          />
+      <p className="text-sm text-gray-400 mb-3 px-2 xl:px-60">Subscribe to receive updates from our shop, including new products, blogs and upcoming sale.</p>
+      <Formik
+        initialValues={{ email: "" }}
+        validate={(values) => {
+          setError("");
+        }}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            const newsdiv = document.getElementById("newsform");
+            const errors = {};
+            setError(null);
+            if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+            ) {
+              setError("Invalid email address");
+            }
+            const isFormValidated = onValidated({ EMAIL: email });
+            newsdiv.style.display = "none";
+            setSubmitting(false);
+            return (
+              errors && email && email.indexOf("@") > -1 && isFormValidated
+            );
+          }, 400);
+        }}
+      >
+        {({ isSubmitting }) => (
+          <Form onChange={handleOnChange}>
+            <div className="flex justify-center items-center">
+              <div id="newsform" className="border border-gray-700 flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row">
+                <Field
+                  className="py-2 px-4"
+                  type="email"
+                  name="email"
+                  placeholder="Enter Email Address"
+                  required
+                />
+                <button
+                  className="bg-gray-700 text-white py-2 px-4"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+            <ErrorMessage name="email" component="div" />
+            <div className="min-h-42px">
+              {"sending" === status ? (
+                <Loading
+                  showSpinner
+                  message="Sending..."
+                  contentColorClass="text-white"
+                  hasVisibilityToggle={false}
+                />
+              ) : null}
+              {"error" === status || error ? (
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: error || getMessage(message),
+                  }}
+                />
+              ) : null}
+              {"success" === status && "error" !== status && !error && (
+                <div
+                  className="p-8 text-sm text-black bg-white border"
+                  role="alert"
+                  dangerouslySetInnerHTML={{ __html: sanitize(message) }}
+                />
+              )}
+            </div>
+          </Form>
         )}
-      </div>
+      </Formik>
     </div>
   );
 };
 
-export default NewsletterForm;
+export default SampleForm;
