@@ -3,10 +3,10 @@ import React from "react";
 const BestSeller = (props) => {
   return (
     <span
-      className="bg-gray-700  text-white text-md px-2.5 py-0.5 rounded-br-lg absolute"
+      className="bg-white text-black text-xs px-1 py-0.5 shadow-md mr-1"
       best={props.best}
     >
-      Best Seller
+      BEST SELLER
     </span>
   );
 };

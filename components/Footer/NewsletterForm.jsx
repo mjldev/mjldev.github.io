@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { sanitize } from "../Utils/Miscellaneous";
-import Loading from "../Loading/Loading";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const SampleForm = ({ status, message, onValidated }) => {
@@ -60,10 +59,10 @@ const SampleForm = ({ status, message, onValidated }) => {
             <div className="flex justify-center items-center">
               <div
                 id="newsform"
-                className="border border-gray-700 flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row"
+                className="flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row"
               >
                 <Field
-                  className="py-2 px-4"
+                  className="border border-gray-700 py-2 px-4"
                   type="email"
                   name="email"
                   placeholder="Enter Email Address"
@@ -78,14 +77,33 @@ const SampleForm = ({ status, message, onValidated }) => {
               </div>
             </div>
             <ErrorMessage name="email" component="div" />
-            <div className="min-h-42px">
+            <div className="flex justify-center min-h-42px">
               {"sending" === status ? (
-                <Loading
-                  showSpinner
-                  message="Sending..."
-                  contentColorClass="text-white"
-                  hasVisibilityToggle={false}
-                />
+                 <div
+                 className="inline-flex items-center px-4 py-2 font-semibold text-sm text-gray-70 transition duration-150"
+               >
+                 <svg
+                   className="animate-spin -ml-1 mr-3 h-10 w-10 text-gray-700"
+                   xmlns="http://www.w3.org/2000/svg"
+                   fill="none"
+                   viewBox="0 0 24 24"
+                 >
+                   <circle
+                     className="opacity-25"
+                     cx="12"
+                     cy="12"
+                     r="10"
+                     stroke="currentColor"
+                     strokeWidth="4"
+                   ></circle>
+                   <path
+                     className="opacity-75"
+                     fill="currentColor"
+                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                   ></path>
+                 </svg>
+                 PLEASE WAIT...
+               </div>
               ) : null}
               {"error" === status || error ? (
                 <p
@@ -96,7 +114,7 @@ const SampleForm = ({ status, message, onValidated }) => {
               ) : null}
               {"success" === status && "error" !== status && !error && (
                 <div
-                  className="p-8 text-sm text-black bg-white border"
+                  className="p-8 text-center text-sm text-gray-700 bg-gray-50 border"
                   role="alert"
                   dangerouslySetInnerHTML={{ __html: sanitize(message) }}
                 />

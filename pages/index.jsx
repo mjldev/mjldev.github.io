@@ -10,7 +10,6 @@ import FadeInTrailBlog from "../components/Anim/FadeInTrailBlog";
 import FadeInTrailProduct from "../components/Anim/FadeInTrailProduct";
 import { useState } from "react";
 
-
 export default function Home() {
   return (
     <dev className="m-0">
@@ -20,25 +19,35 @@ export default function Home() {
       <header>
         <ParallaxProvider>
           <Parallax speed={-10}>
-            <div className="flex items-center justify-center w-full h-auto min-w-screen bg-[url('https://picsum.photos/760/536?grayscale')] bg-no-repeat bg-cover bg-center relative">
-              <div className="min-h-screen w-screen bg-black opacity-40" />
+            <div className="flex justify-center items-center min-h-screen">
+              <div className="absolute left-0 top-0 right-0 bottom-0 flex justify-center items-center overflow-hidden w-full mr-auto ml-auto">
+                <img
+                  className="left-0 top-0 right-0 bottom-0 h-full max-w-none flex object-fill"
+                  src="https://picsum.photos/1467/672?grayscale"
+                  alt="bg-image"
+                />
+                <div className="bg-black opacity-40 absolute left-0 top-0 right-0 bottom-0 w-full h-full mr-auto ml-auto" />
+              </div>
               <Parallax
                 speed={10}
                 className="flex justify-center w-full min-h-screen items-center text-center absolute"
               >
                 <FadeIn>
-                  <div className="flex flex-col justify-center">
-                    <p className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-16">
-                      SAMPLE WEBSITE
-                    </p>
-                    <span>
+                  <div className="container relative w-[1440px] max-w-full mr-auto ml-auto">
+                    <div className="grid justify-items-center text-center grid-cols-1 gap-y-8">
+                      <p className="text-4xl font-semibold md:text-5xl lg:text-6xl xl:text-6xl text-white">
+                        SAMPLE WEBSITE
+                      </p>
+                      <p className="text-white">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      </p>
                       <a
-                        className="py-4 px-8 bg-gray-50 hover:opacity-90"
+                        className="py-4 px-8 bg-white rounded-md ease-in-out block"
                         href={"/product"}
                       >
-                        SHOP NOW
+                        EXPLORE
                       </a>
-                    </span>
+                    </div>
                   </div>
                 </FadeIn>
               </Parallax>

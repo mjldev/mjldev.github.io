@@ -73,22 +73,18 @@ const Navbar = (props) => {
       };
     }
   }, [windowWidth]);
-  /////////////////////////////////////////////////////////////
   return (
     <div
       id="navbar"
       className="flex flex-col justify-center w-full h-auto min-w-screen bg-white sticky top-0 z-50"
     >
       <div className="flex-row justify-between items-center hidden md:flex lg:flex xl:flex px-8">
-        <ul className="w-20 h-auto block p-2">
-          <NavbarItem url="/">
-            <img
-              src="http://cdn.onlinewebfonts.com/svg/img_148071.png"
-              alt="Sample Icon"
-            />
-          </NavbarItem>
+        <ul className="flex justify-center">
+          <a className="text-3xl font-bold" href={"/"}>
+            WEBSITE
+          </a>
         </ul>
-        <ul className="flex flex-row gap-x-8 p-4">
+        <ul className="flex flex-row justify-center items-center gap-x-4 p-4">
           <NavbarItem url="/product">PRODUCTS</NavbarItem>
           <NavbarItem url="/blog">BLOG</NavbarItem>
           <NavbarItem url="/about-us">ABOUT US</NavbarItem>
@@ -99,18 +95,15 @@ const Navbar = (props) => {
         id="hamburger"
         className="flex flex-row justify-between items-center md:hidden lg:hidden xl:hidden px-4"
       >
-        <ul>
-          <div className="w-20 h-auto block p-2">
-            <NavbarItem url="/">
-              <img
-                src="http://cdn.onlinewebfonts.com/svg/img_148071.png"
-                alt="Sample Icon"
-              />
-            </NavbarItem>
-          </div>
+        <ul className="flex justify-center">
+          <a className="text-3xl font-bold" href={"/"}>
+            WEBSITE
+          </a>
         </ul>
-        <ul onClick={navbarDropDown} className="w-14 h-auto block p-4">
+        <ul className="flex justify-center items-center gap-x-4 w-14 h-auto p-4">
           <img
+            className="h-8 w-auto"
+            onClick={navbarDropDown}
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
             alt=""
           />

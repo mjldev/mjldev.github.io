@@ -1,5 +1,6 @@
 import React from "react";
 import BestSeller from "../components/Badge/BestSeller";
+import Sale from "../components/Badge/Sale";
 import Footer from "../components/Footer/Footer";
 import HeaderItem from "../components/Header/HeaderItem";
 import ProductItem from "../components/Product/ProductItem";
@@ -14,54 +15,55 @@ const product = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-x-2">
           <ProductItem
             badge={<BestSeller />}
+            badge1={<Sale/>}
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 4"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱0.00"
           />
           <ProductItem
             badge={<BestSeller />}
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 5"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱0.00"
           />
           <ProductItem
             badge={<BestSeller />}
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 6"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱0.00"
           />
           <ProductItem
             badge={<BestSeller />}
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 7"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱0.00"
           />
           <ProductItem
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 4"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱ 0.00"
           />
           <ProductItem
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 5"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱0.00"
           />
           <ProductItem
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 6"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱0.00"
           />
           <ProductItem
             img="https://picsum.photos/760/536?grayscale=6"
             alt="Lorem 7"
-            description="Lorem Ipsum"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             price="₱0.00"
           />
         </div>
