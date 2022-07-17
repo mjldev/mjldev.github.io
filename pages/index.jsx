@@ -29,7 +29,7 @@ export default function Home() {
                 <FadeIn>
                   <div className="flex flex-col justify-center">
                     <p className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-16">
-                      Sample Website
+                      SAMPLE WEBSITE
                     </p>
                     <span>
                       <a
@@ -99,7 +99,7 @@ export default function Home() {
           <div>
             <FadeIn>
               <MainTitle
-                title="Popular Products"
+                title="Popular Product"
                 title2="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
               />
             </FadeIn>
@@ -107,37 +107,33 @@ export default function Home() {
               <FadeInTrailProduct>
                 <FadeIn>
                   <PopularProductItem
-                    badge={<BestSeller />}
                     img="https://picsum.photos/760/536?grayscale=2"
                     alt="Lorem Ipsum"
-                    description="Lorem Ipsum"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     price="₱0.00"
                   />
                 </FadeIn>
                 <FadeIn>
                   <PopularProductItem
-                    badge={<BestSeller />}
                     img="https://picsum.photos/760/536?grayscale=2"
                     alt="Lorem Ipsum"
-                    description="Lorem Ipsum"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     price="₱0.00"
                   />
                 </FadeIn>
                 <FadeIn>
                   <PopularProductItem
-                    badge={<BestSeller />}
                     img="https://picsum.photos/760/536?grayscale=2"
                     alt="Lorem Ipsum"
-                    description="Lorem Ipsum"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     price="₱0.00"
                   />
                 </FadeIn>
                 <FadeIn>
                   <PopularProductItem
-                    badge={<BestSeller />}
                     img="https://picsum.photos/760/536?grayscale=2"
                     alt="Lorem Ipsum"
-                    description="Lorem Ipsum"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     price="₱0.00"
                   />
                 </FadeIn>

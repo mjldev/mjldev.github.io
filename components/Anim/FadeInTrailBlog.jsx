@@ -18,7 +18,7 @@ const FadeInTrailBlog = ({ children }, props) => {
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-x-4 mb-12">
         {trail.map(({ height, ...props }, index) => (
           <animated.div key={index} style={{ ...props }}>
-            {children[index]} 
+            {children[index]}
           </animated.div>
         ))}
       </div>
