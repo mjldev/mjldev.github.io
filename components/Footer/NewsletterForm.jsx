@@ -106,15 +106,17 @@ const SampleForm = ({ status, message, onValidated }) => {
                </div>
               ) : null}
               {"error" === status || error ? (
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: error || getMessage(message),
-                  }}
+                <div
+                  className="text-center text-sm text-red-700 bg-red-100 border border-red-400 px-4 py-3"
+                  role="alert"
+                  dangerouslySetInnerHTML={{ __html: sanitize(message) }}
                 />
+
+              
               ) : null}
               {"success" === status && "error" !== status && !error && (
                 <div
-                  className="p-8 text-center text-sm text-gray-700 bg-gray-50 border"
+                  className="text-center text-sm text-gray-700 bg-gray-50 border px-4 py-3"
                   role="alert"
                   dangerouslySetInnerHTML={{ __html: sanitize(message) }}
                 />
