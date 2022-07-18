@@ -3,7 +3,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <div className="flex flex-col justify-start m-0 box-border min-h-full">
       <Navbar />
       <Component {...pageProps} />
     </div>
