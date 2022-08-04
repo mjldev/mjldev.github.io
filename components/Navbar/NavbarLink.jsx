@@ -4,7 +4,7 @@ const NavbarLink = (props) => {
   return (
     <li>
       <Link href={props.url}>
-        <a className="block font-oswald font-semibold hover:text-red-600 py-4">{props.children}</a>
+        <a className="block font-oswald font-semibold hover:text-red-600">{props.children}</a>
       </Link>
     </li>
   );
