@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import cook_bg from "../assets/images/cook_bg.jpg"
 
 export default function Home() {
   return (
@@ -12,16 +12,16 @@ export default function Home() {
       <header className="bg-gray-200 mb-20">
         <div className="container relative">
           <div className="flex flex-col justify-center items-center text-center max-w-full min-h-screen">
-            <p className="text-4xl px-5">HELLO WORLD</p>
+            <p className="text-4xl px-4">HELLO WORLD</p>
           </div>
         </div>
       </header>
       <main>
-        <section className="services container px-5 laptop:px-10 mb-20 relative">
-          <div className="flex justify-center flex-col laptop:flex-row">
-            <div className="flex justify-center items-center max-w-full laptop:w-1/3 h-auto px-5">
+        <section className="services container px-4 laptop:px-8 mb-20 relative">
+          <div className="flex justify-center flex-wrap tablet:flex-nowrap">
+            <div className="flex justify-center items-center max-w-full tablet:w-1/2 laptop:w-1/3 h-auto px-4">
               <div className="my-5">
-                <div className="flex flex-col items-center border-y border-y-gray-400 py-5 mb-10">
+                <div className="flex flex-col items-center border-y border-y-gray-400 py-4 mb-10">
                   <p className="text-3xl font-bold">TITLE</p>
                   <p className="text-2xl font-semibold">TITLE</p>
                 </div>
@@ -36,25 +36,22 @@ export default function Home() {
                 <button className="bg-black text-white p-2">LEARN MORE</button>
               </div>
             </div>
-            <div className="max-w-full laptop:w-2/3 h-auto px-5">
-              <img
-                src="https://picsum.photos/1000/600?random=1"
-                className="w-full h-full rounded-lg"
-              />
+            <div className="w-full tablet:w-1/2 laptop:w-2/3 px-4">
+              <img src={cook_bg.src} alt="cook" className="w-full h-full rounded-lg"/>
             </div>
           </div>
         </section>
-        <section className="about-menu container px-5 laptop:px-10 pb-20 relative">
-          <div className="flex justify-center flex-col laptop:flex-row">
-            <div className="max-w-full laptop:w-2/3 h-auto px-5">
+        <section className="about-menu container px-4 laptop:px-8 pb-20 relative">
+          <div className="flex justify-center flex-wrap-reverse tablet:flex-nowrap">
+            <div className="w-full tablet:w-1/2 laptop:w-2/3 px-4">
               <img
                 src="https://picsum.photos/1000/600?random=2"
                 className="w-full h-full rounded-lg"
               />
             </div>
-            <div className="flex justify-center items-center max-w-full laptop:w-1/3 h-auto px-5">
+            <div className="flex justify-center items-center max-w-full tablet:w-1/2 laptop:w-1/3 h-auto px-4">
               <div className="my-5">
-                <div className="flex flex-col items-center border-y border-y-gray-400 py-5 mb-10">
+                <div className="flex flex-col items-center border-y border-y-gray-400 py-4 mb-10">
                   <p className="text-2xl font-semibold">TITLE</p>
                   <p className="text-3xl font-bold">TITLE</p>
                 </div>
