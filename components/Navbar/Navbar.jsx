@@ -114,8 +114,8 @@ const Navbar = () => {
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedby="button-addon3"
+                autoFocus
               />
-              <button className="bg-black text-white p-2">SEARCH</button>
             </div>
           </div>
         )}
