@@ -8,6 +8,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        personal: {
+          primary: "#F24150",
+          secondary: "#D93636",
+          tertiary: "#731F1F",
+          neutralDark: "#261C1F",
+          neutralLight: "#A69286",
+
+          textPrimary: "#261C1F",
+
+          buttonPrimary: "#F24150",
+          buttonHover: "#D93636",
+        },
+      },
       fontFamily: {
         'sans': ['Fira Code', ...defaultTheme.fontFamily.sans],
         'oswald' : ['Oswald', 'sans-serif'],
