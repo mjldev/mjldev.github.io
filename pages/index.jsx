@@ -28,7 +28,7 @@ export default function Home() {
                   <p className="text-2xl font-semibold">PICKUP/DELIVERY</p>
                 </div>
                 <div className="mb-10">
-                  <p>
+                  <p className="leading-loose laptop:leading-relaxed">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Facilis id voluptas architecto soluta earum eius facere,
                     dolor quas quibusdam, aliquid debitis amet odio, rerum ipsa
@@ -51,7 +51,7 @@ export default function Home() {
                   <p className="text-4xl font-oswald font-bold">THE MENU</p>
                 </div>
                 <div className="mb-10">
-                  <p>
+                  <p className="leading-loose laptop:leading-relaxed">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Facilis id voluptas architecto soluta earum eius facere,
                     dolor quas quibusdam, aliquid debitis amet odio, rerum ipsa

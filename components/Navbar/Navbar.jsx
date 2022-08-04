@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="containerl bg-white max-w-full py-5 px-4 laptop:px-10 z-20 relative">
         <div className="grid grid-flow-col desktop:grid-cols-3 items-center">
           <Link href="/">
-            <a className="flex font-oswald font-bold text-2xl desktop:text-3xl">
+            <a className="flex font-oswald font-bold tracking-tighter text-2xl desktop:text-3xl">
               MJL KITCHEN
             </a>
           </Link>
