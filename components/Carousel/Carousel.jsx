@@ -9,6 +9,30 @@ import BannerImage from "../Header/BannerImage";
 import Overlay from "../Header/Overlay";
 import ButtonPrimary from "../Button/ButtonPrimary";
 
+const slide = [
+  {
+    id: 1,
+    image: chicken_bg.src,
+    title: "CHICKEN ADOBO",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    button: "LEARN MORE",
+  },
+  {
+    id: 2,
+    image: pork_bg.src,
+    title: "PORK PATA HUMBA",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    button: "LEARN MORE",
+  },
+  {
+    id: 3,
+    image: beef_bg.src,
+    title: "BEEF SOUP",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    button: "LEARN MORE",
+  },
+];
+
 const Carousel = () => {
   const options = {
     delay: 4000,
@@ -44,66 +68,25 @@ const Carousel = () => {
     <div className="flex justify-center h-auto">
       <div className="overflow-hidden" ref={viewportRef}>
         <div className="grid grid-flow-col">
-          <div className="h-auto w-screen object-contain">
-            <div className="relative h-full">
-              <BannerImage url={chicken_bg.src} />
-              <Overlay />
-              <div className="container relative flex justify-center flex-col min-h-screen md:min-h-screen max-w-full mr-auto ml-auto px-4 md:px-12">
-                <div className="grid grid-col-1 justify-items-start gap-6">
-                  <span className="text-white text-3xl underline underline-offset-4 font-oswald">
-                    MUST TRY!
-                  </span>
-                  <span className="font-oswald font-semibold text-6xl md:text-7xl text-white">
-                    CHICKEN ADOBO
-                  </span>
-                  <span className="text-white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </span>
-                  <ButtonPrimary url="/our-menu">LEARN MORE</ButtonPrimary>
+          {slide.map(({ id, image, title, text, button }) => {
+            return (
+              <div key={id} className="h-auto w-screen object-contain">
+                <div className="relative h-full">
+                  <BannerImage url={image} />
+                  <Overlay />
+                  <div className="container flex justify-center flex-col min-h-screen max-w-full mx-auto px-4 laptop:px-12 relative">
+                    <div className="flex flex-col items-start gap-y-4 laptop:gap-y-8">
+                      <h2 className="font-oswald font-semibold text-5xl laptop:text-6xl text-white">
+                        {title}
+                      </h2>
+                      <p className="text-white text-base">{text}</p>
+                      <ButtonPrimary url="#">{button}</ButtonPrimary>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="h-auto w-screen object-contain">
-            <div className="relative h-full">
-              <BannerImage url={pork_bg.src} />
-              <Overlay />
-              <div className="container relative flex justify-center flex-col min-h-screen md:min-h-screen max-w-full mr-auto ml-auto px-4 md:px-12">
-                <div className="grid justify-items-start grid-cols-1 gap-y-6">
-                  <span className="text-white text-3xl underline underline-offset-4 font-oswald">
-                    MUST TRY!
-                  </span>
-                  <span className="font-oswald font-semibold text-6xl md:text-7xl text-white">
-                    PORK PATA HUMBA
-                  </span>
-                  <span className="text-white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </span>
-                  <ButtonPrimary url="/our-menu">LEARN MORE</ButtonPrimary>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="h-auto w-screen object-contain">
-            <div className="relative h-full">
-              <BannerImage url={beef_bg.src} />
-              <Overlay />
-              <div className="container relative flex justify-center flex-col min-h-screen md:min-h-screen max-w-full mr-auto ml-auto px-4 md:px-12">
-                <div className="grid justify-items-start grid-cols-1 gap-y-6">
-                  <span className="text-white text-3xl underline underline-offset-4 font-oswald">
-                    MUST TRY!
-                  </span>
-                  <span className="font-oswald font-semibold text-6xl md:text-7xl text-white">
-                    BEEF SOUP
-                  </span>
-                  <span className="text-white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </span>
-                  <ButtonPrimary url="/our-menu">LEARN MORE</ButtonPrimary>
-                </div>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
       <div className="flex justify-center py-8 self-end absolute">
