@@ -1,5 +1,4 @@
 import Head from "next/head";
-import cook_bg from "../assets/images/cook_bg.jpg";
 import chicken_bg from "../assets/images/chicken_bg.jpg";
 import Carousel from "../components/Carousel/Carousel.jsx"
 
