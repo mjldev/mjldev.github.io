@@ -1,6 +1,6 @@
 import Head from "next/head";
 import chicken_bg from "../assets/images/chicken_bg.jpg";
-import Carousel from "../components/Carousel/Carousel.jsx"
+import Carousel from "../components/Carousel/Carousel"
 
 export default function Home() {
   return (
