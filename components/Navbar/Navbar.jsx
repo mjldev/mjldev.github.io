@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
-import {
-  AiOutlineMenu,
-  AiOutlineClose,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { BsHandbag } from "react-icons/bs";
 
 const Navbar = () => {
@@ -26,7 +22,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const controlNavbar = () => {
-    window.scrollY > 10 ? setNav(false) : setNav(true), setDropdown(false);
+    window.scrollY > 0 ? setNav(false) : setNav(true), setDropdown(false);
     setLastScrollY(window.scrollY);
   };
 
@@ -49,13 +45,15 @@ const Navbar = () => {
         <div className="container flex items-center bg-inherit py-4 px-4 laptop:px-12 relative">
           <div className="flex flex-1 justify-start">
             <Link href="/">
-              <a className="font-oswald text-2xl laptop:text-4xl whitespace-nowrap">MJL KITCHEN</a>
+              <a className="font-oswald text-3xl laptop:text-4xl whitespace-nowrap">
+                MJL KITCHEN
+              </a>
             </Link>
           </div>
           <ul
             className={`flex justify-center flex-col tablet:flex-row tablet:top-0 left-0 flex-2 desktop:flex-1 items-center gap-4 laptop:gap-8 bg-inherit w-full py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
               dropdown
-                ? "top-16 transition-all duration-300 ease-in border-y"
+                ? "top-[68px] transition-all duration-300 ease-in border-y"
                 : "-top-80"
             }`}
           >
@@ -77,8 +75,8 @@ const Navbar = () => {
               onClick={() => setDropdown(!dropdown)}
               className={`h-6 w-6 tablet:hidden ${
                 dropdown
-                  ? "transition-all duration-300 ease-in skew-y-12"
-                  : "skew-y-0"
+                  ? "transition-all duration-300 ease-in scale-125"
+                  : "scale-100"
               }`}
             >
               {dropdown ? (
@@ -103,8 +101,8 @@ const Navbar = () => {
           <div className="flex justify-end absolute top-0 right-0 w-screen h-screen border">
             <div className="bg-black w-full opacity-80" />
             <div className="flex flex-col tablet:flex-[1_1_30%] min-w-[100%] tablet:min-w-[35ch] h-screen bg-white text-black">
-              <div className="flex justify-between border-b p-6">
-                <p>YOUR CART</p>{" "}
+              <div className="flex justify-between border-b py-5 px-4">
+                <span className="font-bold text-xl">YOUR CART</span>
                 <button
                   onClick={() => {
                     setCart(false), (document.body.style.overflow = "auto");

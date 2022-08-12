@@ -19,7 +19,7 @@ export default function Home() {
       <main className="flex flex-col gap-12">
         <section className="container flex flex-col tablet:flex-row gap-4 px-4 laptop:px-12 relative">
           <div className="flex flex-[1_1_30%] min-w-[30ch] tablet:max-w-[35ch] flex-col justify-center gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
-            <div className="flex flex-col items-center text-center border-y border-y-black py-4">
+            <div className="flex flex-col items-center text-center border-y border-y-personal-neutralLight py-4">
               <h2 className="font-oswald uppercase font-bold text-3xl laptop:text-4xl desktop:text-5xl">
                 order online
               </h2>
@@ -42,7 +42,7 @@ export default function Home() {
         </section>
         <section className="container flex flex-col tablet:flex-row-reverse gap-4 px-4 laptop:px-12 relative">
           <div className="flex flex-[1_1_30%] min-w-[30ch] tablet:max-w-[35ch] flex-col justify-center gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
-            <div className="flex flex-col-reverse items-center text-center border-y border-y-black py-4">
+            <div className="flex flex-col-reverse items-center text-center border-y border-y-personal-neutralLight py-4">
               <h2 className="font-oswald uppercase font-bold text-3xl laptop:text-4xl desktop:text-5xl">
                 THE MENU
               </h2>

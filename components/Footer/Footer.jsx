@@ -8,7 +8,7 @@ const Footer = () => {
           <p className="font-oswald font-bold tracking-tighter text-4xl desktop:text-5xl">
             MJL KITCHEN
           </p>
-          <p>©2022 Hello World</p>
+          <p>©2022 MJL KITCHEN</p>
         </div>
       </section>
     </footer>
