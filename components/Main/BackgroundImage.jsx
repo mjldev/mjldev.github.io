@@ -5,7 +5,7 @@ const BackgroundImage = (props) => {
     <img
       src={props.url}
       alt={props.url}
-      className="h-full w-full object-cover rounded-lg"
+      className="block h-full w-full object-cover rounded-lg"
     />
   );
 };

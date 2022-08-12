@@ -16,51 +16,55 @@ export default function Home() {
       <header>
         <Carousel />
       </header>
-      <main className="flex flex-col gap-12">
-        <section className="container flex flex-col tablet:flex-row gap-4 px-4 laptop:px-12 relative">
-          <div className="flex flex-[1_1_30%] min-w-[30ch] tablet:max-w-[35ch] flex-col justify-center gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
-            <div className="flex flex-col items-center text-center border-y border-y-personal-neutralLight py-4">
-              <h2 className="font-oswald uppercase font-bold text-3xl laptop:text-4xl desktop:text-5xl">
-                order online
-              </h2>
-              <h3 className="font-semibold uppercase text-xl laptop:text-2xl desktop:text-3xl">
-                pickup/delivery
-              </h3>
+      <main className="flex flex-col gap-4 tablet:gap-12">
+        <section>
+          <div className="container flex flex-col tablet:flex-row gap-4 max-w-[90%] relative">
+            <div className="flex flex-col justify-center basis-1/3 min-w-[25ch] tablet:max-w-[30ch] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
+              <div className="flex flex-col items-center text-center border-y border-y-personal-neutralLight py-4">
+                <h2 className="font-oswald uppercase font-bold text-3xl laptop:text-4xl desktop:text-5xl">
+                  order online
+                </h2>
+                <h3 className="font-semibold uppercase text-xl laptop:text-2xl desktop:text-3xl">
+                  pickup/delivery
+                </h3>
+              </div>
+              <div className="flex flex-col items-start gap-4 tablet:gap-8">
+                <p className="leading-relaxed">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Molestias obcaecati aperiam itaque et porro. Odit dolor
+                  placeat praesentium! Asperiores, itaque?
+                </p>
+                <ButtonPrimary url="#">LEARN MORE</ButtonPrimary>
+              </div>
             </div>
-            <div className="flex flex-col items-start gap-4 tablet:gap-8">
-              <p className="leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Molestias obcaecati aperiam itaque et porro. Odit dolor placeat
-                praesentium! Asperiores, itaque?
-              </p>
-              <ButtonPrimary url="#">LEARN MORE</ButtonPrimary>
+            <div className="basis-3/4">
+              <BackgroundImage url={cook_bg.src} />
             </div>
-          </div>
-          <div className="flex-[1_1_70%]">
-            <BackgroundImage url={cook_bg.src} />
           </div>
         </section>
-        <section className="container flex flex-col tablet:flex-row-reverse gap-4 px-4 laptop:px-12 relative">
-          <div className="flex flex-[1_1_30%] min-w-[30ch] tablet:max-w-[35ch] flex-col justify-center gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
-            <div className="flex flex-col-reverse items-center text-center border-y border-y-personal-neutralLight py-4">
-              <h2 className="font-oswald uppercase font-bold text-3xl laptop:text-4xl desktop:text-5xl">
-                THE MENU
-              </h2>
-              <h3 className="font-semibold uppercase text-xl laptop:text-2xl desktop:text-3xl">
-                WHAT&apos;S ON
-              </h3>
+        <section>
+          <div className="container flex flex-col tablet:flex-row-reverse gap-4 max-w-[90%] relative">
+            <div className="flex flex-col justify-center basis-1/3 min-w-[25ch] tablet:max-w-[30ch] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
+              <div className="flex flex-col-reverse items-center text-center border-y border-y-personal-neutralLight py-4">
+                <h2 className="font-oswald uppercase font-bold text-3xl laptop:text-4xl desktop:text-5xl">
+                  THE MENU
+                </h2>
+                <h3 className="font-semibold uppercase text-xl laptop:text-2xl desktop:text-3xl">
+                  WHAT&apos;S ON
+                </h3>
+              </div>
+              <div className="flex flex-col items-start gap-4 tablet:gap-8">
+                <p className="leading-relaxed">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates architecto exercitationem reiciendis reprehenderit
+                  quaerat quasi doloribus explicabo ipsa. Dolores, quaerat?
+                </p>
+                <ButtonPrimary url="#">LEARN MORE</ButtonPrimary>
+              </div>
             </div>
-            <div className="flex flex-col items-start gap-4 tablet:gap-8">
-              <p className="leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates architecto exercitationem reiciendis reprehenderit
-                quaerat quasi doloribus explicabo ipsa. Dolores, quaerat?
-              </p>
-              <ButtonPrimary url="#">LEARN MORE</ButtonPrimary>
+            <div className="basis-3/4">
+              <BackgroundImage url={chicken_bg.src} />
             </div>
-          </div>
-          <div className="flex-[1_1_70%]">
-            <BackgroundImage url={chicken_bg.src} />
           </div>
         </section>
       </main>

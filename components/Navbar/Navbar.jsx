@@ -42,7 +42,7 @@ const Navbar = () => {
             : "bg-[length:100%_100%] text-personal-textPrimary"
         }`}
       >
-        <div className="container flex items-center bg-inherit py-4 px-4 laptop:px-12 relative">
+        <div className="container flex items-center bg-inherit py-4 max-w-[90%] relative">
           <div className="flex flex-1 justify-start">
             <Link href="/">
               <a className="font-oswald text-3xl laptop:text-4xl whitespace-nowrap">

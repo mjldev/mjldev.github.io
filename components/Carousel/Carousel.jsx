@@ -71,7 +71,7 @@ const Carousel = () => {
                 <div className="relative">
                   <BannerImage url={item.image} />
                   <Overlay />
-                  <div className="container flex justify-center flex-col min-h-screen px-4 laptop:px-12 relative">
+                  <div className="container flex justify-center flex-col min-h-screen max-w-[90%] relative">
                     <div className="flex flex-col items-start gap-y-4 laptop:gap-y-8">
                       <h2 className="font-oswald font-semibold text-5xl laptop:text-6xl text-white">
                         {item.title}
