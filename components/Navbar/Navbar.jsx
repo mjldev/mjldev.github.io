@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import NavbarLink from "./NavbarLink";
-import MobileMenu from "./MobileMenu";
+import NavLink from "./NavLink";
 import {
   AiOutlineMenu,
   AiOutlineClose,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { BsHandbag } from "react-icons/bs";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [cart, setCart] = useState(false);
+
   const handleWidth = () => {
     window.innerWidth >= 640 ? setDropdown(false) : setDropdown(false);
   };
@@ -37,87 +38,90 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   return (
-    <nav
-      className={`top-0 sticky z-50 bg-gradient-to-b from-white  to-white bg-no-repeat transition-all duration-200 ease-out ${
-        nav ? "bg-[length:100%_0%;]" : "bg-[length:100%_100%]"
-      }`}
-    >
-      <div className="container max-w-full py-4 px-4 laptop:px-10 z-20 relative ">
-        <div className="grid grid-flow-col desktop:grid-cols-3 items-center">
-          <Link href="/">
-            <a
-              className={`font-oswald font-bold tracking-tighter text-3xl desktop:text-5xl ${
-                nav ? "text-white" : "text-personal-textPrimary"
-              }`}
-            >
-              MJL KITCHEN
-            </a>
-          </Link>
-          <div className="menu hidden tablet:flex justify-center">
-            <ul
-              className={`flex gap-x-4 laptop:gap-x-8 text-md ${
-                nav ? "text-white" : " text-personal-textPrimary"
-              }`}
-            >
-              <NavbarLink url="#">MENU</NavbarLink>
-              <NavbarLink url="#">BLOG</NavbarLink>
-              <NavbarLink url="#">ABOUT US</NavbarLink>
-              <NavbarLink url="#">CONTACT US</NavbarLink>
-            </ul>
+    <>
+      <nav
+        className={`top-0 sticky z-50 text-personal-textPrimary bg-white tablet:bg-transparent bg-gradient-to-r from-white to-white bg-no-repeat transition-all duration-200 ease-out ${
+          nav
+            ? "bg-[length:100%_0%] tablet:text-white"
+            : "bg-[length:100%_100%] text-personal-textPrimary"
+        }`}
+      >
+        <div className="container flex items-center bg-inherit py-4 px-4 laptop:px-12 relative">
+          <div className="flex flex-1 justify-start">
+            <Link href="/">
+              <a className="font-oswald text-2xl laptop:text-4xl">MJLKITCHEN</a>
+            </Link>
           </div>
-          <div
-            className={`flex justify-end items-center gap-x-4 laptop:gap-x-8 ${
-              nav ? "text-white" : "text-personal-textPrimary"
+          <ul
+            className={`flex justify-center flex-col tablet:flex-row tablet:top-0 left-0 flex-2 desktop:flex-1 items-center gap-4 laptop:gap-8 bg-inherit w-full py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
+              dropdown
+                ? "top-16 transition-all duration-300 ease-in border-y"
+                : "-top-80"
             }`}
           >
-            <div
-              className={`flex tablet:hidden ${
-                nav ? "text-white" : "text-personal-textPrimary"
-              }`}
-              onClick={() => {
-                setDropdown(!dropdown), setCart(false);
-              }}
-            >
-              <button
-                className={
-                  dropdown ? "skew-y-12 ease-in-out duration-200" : ""
-                }
-              >
-                {dropdown ? (
-                  <AiOutlineClose className="w-6 h-6" />
-                ) : (
-                  <AiOutlineMenu className="w-6 h-6" />
-                )}
-              </button>
-            </div>
+            <NavLink click={() => setDropdown(false)} url="#">
+              OUR MENU
+            </NavLink>
+            <NavLink click={() => setDropdown(false)} url="#">
+              BLOG
+            </NavLink>
+            <NavLink click={() => setDropdown(false)} url="#">
+              ABOUT US
+            </NavLink>
+            <NavLink click={() => setDropdown(false)} url="#">
+              CONTACT US
+            </NavLink>
+          </ul>
+          <div className="flex flex-1 gap-4 justify-end">
             <button
-              className={cart ? "skew-y-12" : "skew-y-0"}
-              onClick={() => {
-                setCart(!cart), setDropdown(false);
-              }}
+              onClick={() => setDropdown(!dropdown)}
+              className={`h-6 w-6 tablet:hidden ${
+                dropdown
+                  ? "transition-all duration-300 ease-in skew-y-12"
+                  : "skew-y-0"
+              }`}
             >
-              <AiOutlineShoppingCart className="w-6 h-6" />
+              {dropdown ? (
+                <AiOutlineClose className="h-full w-full" />
+              ) : (
+                <AiOutlineMenu className="h-full w-full" />
+              )}
+            </button>
+            <button
+              onClick={() => {
+                setCart(true),
+                  setDropdown(false),
+                  (document.body.style.overflow = "hidden");
+              }}
+              className="h-6 w-6"
+            >
+              <BsHandbag className="h-full w-full" />
             </button>
           </div>
         </div>
-      </div>
-      <div
-        className={
-          "absolute flex flex-col items-center bg-white w-full tablet:w-1/2 laptop:w-1/3 desktop:w-1/4 border right-0 p-5 duration-200 ease-in-out z-20 " +
-          (cart ? "mt-0" : "-mt-96")
-        }
-      >
-        <span>Your cart is empty</span>
-      </div>
-      <div
-        className={
-          "absolute w-full duration-200 ease-in-out z-10 " +
-          (dropdown ? "mt-0" : "-mt-96")
-        }
-      >
-        <MobileMenu />
-      </div>
-    </nav>
+        {cart && (
+          <div className="flex justify-end absolute top-0 right-0 w-screen h-screen border">
+            <div className="bg-gray-700 w-full opacity-80" />
+            <div className="flex flex-col flex-[1_1_30%] min-w-[30ch] h-screen bg-white text-black">
+              <div className="flex justify-between border-b p-6">
+                <p>YOUR CART</p>{" "}
+                <button
+                  onClick={() => {
+                    setCart(false), (document.body.style.overflow = "auto");
+                  }}
+                  className="h-6 w-6"
+                >
+                  <AiOutlineClose className="h-full w-full" />
+                </button>
+              </div>
+              <div className="flex justify-center">
+                <p>Your cart is empty.</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
   );
 };
 

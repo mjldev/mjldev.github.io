@@ -11,21 +11,18 @@ import ButtonPrimary from "../Button/ButtonPrimary";
 
 const slide = [
   {
-    id: 1,
     image: chicken_bg.src,
     title: "CHICKEN ADOBO",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     button: "LEARN MORE",
   },
   {
-    id: 2,
     image: pork_bg.src,
     title: "PORK PATA HUMBA",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     button: "LEARN MORE",
   },
   {
-    id: 3,
     image: beef_bg.src,
     title: "BEEF SOUP",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -63,24 +60,24 @@ const Carousel = () => {
     setScrollSnaps(embla.scrollSnapList());
     embla.on("select", onSelect);
   }, [embla, setScrollSnaps, onSelect]);
-
+ 
   return (
-    <div className="flex justify-center h-auto">
+    <div className="flex justify-center max-w-full h-auto relative">
       <div className="overflow-hidden" ref={viewportRef}>
         <div className="grid grid-flow-col">
-          {slide.map(({ id, image, title, text, button }) => {
+          {slide.map((item, index) => {
             return (
-              <div key={id} className="h-auto w-screen object-contain">
-                <div className="relative h-full">
-                  <BannerImage url={image} />
+              <div key={index} className="w-screen object-contain">
+                <div className="relative">
+                  <BannerImage url={item.image} />
                   <Overlay />
-                  <div className="container flex justify-center flex-col min-h-screen max-w-full mx-auto px-4 laptop:px-12 relative">
+                  <div className="flex justify-center flex-col min-h-screen px-4 laptop:px-12 relative">
                     <div className="flex flex-col items-start gap-y-4 laptop:gap-y-8">
                       <h2 className="font-oswald font-semibold text-5xl laptop:text-6xl text-white">
-                        {title}
+                        {item.title}
                       </h2>
-                      <p className="text-white text-base">{text}</p>
-                      <ButtonPrimary url="#">{button}</ButtonPrimary>
+                      <p className="text-white text-md">{item.text}</p>
+                      <ButtonPrimary url="#">{item.button}</ButtonPrimary>
                     </div>
                   </div>
                 </div>
@@ -89,7 +86,7 @@ const Carousel = () => {
           })}
         </div>
       </div>
-      <div className="flex justify-center py-8 self-end absolute">
+      <div className="flex py-8 self-end absolute">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
