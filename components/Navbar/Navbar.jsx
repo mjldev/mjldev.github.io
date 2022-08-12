@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="container flex items-center bg-inherit py-4 px-4 laptop:px-12 relative">
           <div className="flex flex-1 justify-start">
             <Link href="/">
-              <a className="font-oswald text-2xl laptop:text-4xl">MJLKITCHEN</a>
+              <a className="font-oswald text-2xl laptop:text-4xl whitespace-nowrap">MJL KITCHEN</a>
             </Link>
           </div>
           <ul
