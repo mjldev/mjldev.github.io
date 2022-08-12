@@ -101,8 +101,8 @@ const Navbar = () => {
         </div>
         {cart && (
           <div className="flex justify-end absolute top-0 right-0 w-screen h-screen border">
-            <div className="bg-gray-700 w-full opacity-80" />
-            <div className="flex flex-col flex-[1_1_30%] min-w-[30ch] h-screen bg-white text-black">
+            <div className="bg-black w-full opacity-80" />
+            <div className="flex flex-col tablet:flex-[1_1_30%] min-w-[100%] tablet:min-w-[35ch] h-screen bg-white text-black">
               <div className="flex justify-between border-b p-6">
                 <p>YOUR CART</p>{" "}
                 <button
