@@ -2,33 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import DotButton from "./DotButton";
-import pork_bg from "/assets/images/pork_bg.jpg";
-import beef_bg from "/assets/images/beef_bg.jpg";
-import chicken_bg from "/assets/images/chicken_bg.jpg";
-import BannerImage from "../Header/BannerImage";
-import Overlay from "../Header/Overlay";
 import ButtonPrimary from "../Button/ButtonPrimary";
-
-const slide = [
-  {
-    image: chicken_bg.src,
-    title: "CHICKEN ADOBO",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    button: "LEARN MORE",
-  },
-  {
-    image: pork_bg.src,
-    title: "PORK PATA HUMBA",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    button: "LEARN MORE",
-  },
-  {
-    image: beef_bg.src,
-    title: "BEEF SOUP",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    button: "LEARN MORE",
-  },
-];
+import { CarouselItem }  from "./CarouselItem";
 
 const Carousel = () => {
   const options = {
@@ -60,23 +35,27 @@ const Carousel = () => {
     setScrollSnaps(embla.scrollSnapList());
     embla.on("select", onSelect);
   }, [embla, setScrollSnaps, onSelect]);
- 
+
   return (
     <div className="flex justify-center max-w-full h-auto relative">
       <div className="overflow-hidden" ref={viewportRef}>
         <div className="grid grid-flow-col">
-          {slide.map((item, index) => {
+          {CarouselItem.map((item, index) => {
             return (
               <div key={index} className="w-screen object-contain">
                 <div className="relative">
-                  <BannerImage url={item.image} />
-                  <Overlay />
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="absolute w-full h-full object-cover"
+                  />
+                  <div className="absolute bg-black opacity-50 w-full h-full" />
                   <div className="container flex justify-center flex-col min-h-screen max-w-[90%] relative">
                     <div className="flex flex-col items-start gap-y-4 laptop:gap-y-8">
-                      <h2 className="font-oswald font-semibold text-5xl laptop:text-6xl text-white">
+                      <p className="font-oswald font-semibold text-5xl laptop:text-6xl text-white">
                         {item.title}
-                      </h2>
-                      <p className="text-white text-md">{item.text}</p>
+                      </p>
+                      <p className="text-white font-oswald text-2xl uppercase">{item.text}</p>
                       <ButtonPrimary url="#">{item.button}</ButtonPrimary>
                     </div>
                   </div>

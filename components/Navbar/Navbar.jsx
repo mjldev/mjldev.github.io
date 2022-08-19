@@ -42,16 +42,16 @@ const Navbar = () => {
             : "bg-[length:100%_100%] text-personal-textPrimary"
         }`}
       >
-        <div className="container flex items-center bg-inherit py-4 max-w-[90%] relative">
+        <div className="container flex items-center bg-inherit py-4 max-w-[90%]">
           <div className="flex flex-1 justify-start">
             <Link href="/">
-              <a className="font-oswald text-3xl laptop:text-4xl whitespace-nowrap">
+              <a className="font-oswald font-bold text-4xl laptop:text-5xl whitespace-nowrap">
                 MJL KITCHEN
               </a>
             </Link>
           </div>
           <ul
-            className={`flex justify-center flex-col tablet:flex-row tablet:top-0 left-0 flex-2 desktop:flex-1 items-center gap-4 laptop:gap-8 bg-inherit w-full py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
+            className={`flex justify-center flex-col tablet:flex-row tablet:top-0 left-0 flex-1 items-center gap-4 laptop:gap-8 bg-inherit w-full text-lg whitespace-nowrap px-4 laptop:px-0 py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
               dropdown
                 ? "top-[68px] transition-all duration-300 ease-in border-y"
                 : "-top-80"
