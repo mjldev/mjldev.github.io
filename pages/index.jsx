@@ -7,7 +7,7 @@ import BackgroundImage from "../components/Main/BackgroundImage";
 import TitlePrimary from "../components/Main/TitlePrimary";
 import TitleSecondary from "../components/Main/TitleSecondary";
 import Text from "../components/Main/Text";
-// import Testimonial from "../components/Testimonial/Testimonial";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 export default function Home() {
   return (
@@ -63,14 +63,14 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <section>
+        <section>
           <div className="container relative max-w-[90%] border-4 border-personal-neutralDark rounded-lg py-4 tablet:py-8">
             <div className="flex flex-col justify-center items-center gap-y-4">
               <TitlePrimary title="CUSTOMERS REVIEW" />
               <Testimonial />
             </div>
           </div>
-        </section> */}
+        </section>
       </main>
     </div>
   );
