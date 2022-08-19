@@ -1,35 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-// import { TestimonialItem } from "./TestimonialItem";
+import { TestimonialItem } from "./TestimonialItem";
 import PreviousButton from "./PreviousButton";
 import NextButton from "./NextButton";
 import Rating from "./Rating";
 
 const Testimonial = () => {
   
-  const TestimonialItem = [
-    {
-      name: "Review by Lorem Ipsum",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias obcaecati aperiam itaque et porro. Odit dolor placeat praesentium! Asperiores.",
-    },
-    {
-      name: "Review by Lorem Ipsum",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias obcaecati aperiam itaque et porro. Odit dolor placeat praesentium! Asperiores.",
-    },
-    {
-      name: "Review by Lorem Ipsum",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias obcaecati aperiam itaque et porro. Odit dolor placeat praesentium! Asperiores.",
-    },
-    {
-      name: "Review by Lorem Ipsum",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias obcaecati aperiam itaque et porro. Odit dolor placeat praesentium! Asperiores.",
-    },
-    {
-      name: "Review by Lorem Ipsum",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias obcaecati aperiam itaque et porro. Odit dolor placeat praesentium! Asperiores.",
-    },
-  ];
-
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -61,7 +38,7 @@ const Testimonial = () => {
                   <p className="leading-relaxed text-base">
                     {item.text}
                   </p>
-                  <Rating />
+                 
                   <p className="text-black font-oswald font-normal text-base">
                     {item.name}
                   </p>
