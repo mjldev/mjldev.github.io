@@ -3,11 +3,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import { TestimonialItem } from "./TestimonialItem";
 import PreviousButton from "./PreviousButton";
 import NextButton from "./NextButton";
-import Rating from "./Rating";
+import StartRating from "./StartRating";
 
 const Testimonial = () => {
-  
-  const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true });
+  const [viewportRef, embla] = useEmblaCarousel({
+    skipSnaps: false,
+    loop: true,
+  });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
@@ -23,7 +25,7 @@ const Testimonial = () => {
   useEffect(() => {
     if (!embla) return;
     onSelect();
-   
+
     embla.on("select", onSelect);
   }, [embla, onSelect]);
 
@@ -35,10 +37,8 @@ const Testimonial = () => {
             return (
               <div key={index} className="relative min-w-full">
                 <div className="flex flex-col justify-center items-center text-center gap-y-4 relative overflow-hidden px-4 laptop:px-16">
-                  <p className="leading-relaxed text-base">
-                    {item.text}
-                  </p>
-                 
+                  <p className="leading-relaxed text-base">{item.text}</p>
+                  <StartRating />
                   <p className="text-black font-oswald font-normal text-base">
                     {item.name}
                   </p>
