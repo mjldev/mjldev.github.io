@@ -12,19 +12,23 @@ module.exports = {
         sans: ["Fira Code", ...defaultTheme.fontFamily.sans],
         oswald: ["Oswald", "sans-serif"],
         "fira-code": ["Fira Code", "monospace"],
+        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         personal: {
           primary: "#F24150",
           secondary: "#D93636",
-          tertiary: "#731F1F",
+          accent: "#731F1F",
           neutralDark: "#261C1F",
           neutralLight: "#A69286",
 
           textPrimary: "#261C1F",
+          textHoverPrimary: "#F24150",
 
           buttonPrimary: "#F24150",
-          buttonHover: "#D93636",
+          buttonSecondary: "#A69286",
+          buttonHoverPrimary: "#D93636",
+          buttonHoverSecondary: "#261C1F",
         },
       },
       container: {
@@ -32,13 +36,13 @@ module.exports = {
       },
       screens: {
         tablet: "640px",
-        // => @media (min-width: 640px) { ... }
+        //min-width: 640px
 
         laptop: "1024px",
-        // => @media (min-width: 1024px) { ... }
+        //min-width: 1024px
 
         desktop: "1280px",
-        // => @media (min-width: 1280px) { ... }
+        //min-width: 1280px
       },
     },
   },

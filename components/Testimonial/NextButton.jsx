@@ -1,12 +1,11 @@
 import React from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 
-const NextButton = ({ enabled, onClick }) => {
+const NextButton = ({ onClick }) => {
   return (
     <button
-      className="w-20 h-20"
+      className="w-20 h-20 text-personal-neutralDark"
       onClick={onClick}
-      disabled={!enabled}
     >
       <RiArrowRightSLine className="w-full h-full" />
     </button>

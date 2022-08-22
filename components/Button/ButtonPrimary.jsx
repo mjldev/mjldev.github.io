@@ -1,13 +1,10 @@
-import Link from "next/link";
 import React from "react";
 
 const ButtonPrimary = (props) => {
   return (
-    <Link href={props.url}>
-      <a className="text-white font-oswald font-bold bg-personal-primary py-2 px-4 bg-gradient-to-r from-personal-secondary to-personal-secondary bg-no-repeat transition-all duration-200 ease-out bg-[length:0%] hover:bg-[length:100%] whitespace-nowrap">
-        {props.children}
-      </a>
-    </Link>
+    <button onClick={props.onClick} type={props.type} className="text-white text-base font-oswald font-bold whitespace-nowrap uppercase py-3 px-6 bg-personal-buttonPrimary hover:bg-personal-buttonHoverPrimary">
+      {props.children}
+    </button>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import DotButton from "./DotButton";
-import ButtonPrimary from "../Button/ButtonPrimary";
+import ButtonLink from "../Button/ButtonLink";
 import { CarouselItem }  from "./CarouselItem";
 
 const Carousel = () => {
@@ -56,7 +56,7 @@ const Carousel = () => {
                         {item.title}
                       </p>
                       <p className="text-white font-oswald text-2xl uppercase">{item.text}</p>
-                      <ButtonPrimary url="#">{item.button}</ButtonPrimary>
+                      <ButtonLink url={item.path}>{item.button}</ButtonLink>
                     </div>
                   </div>
                 </div>

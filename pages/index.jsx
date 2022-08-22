@@ -1,15 +1,24 @@
+import React, { useRef } from "react";
 import Head from "next/head";
 import chicken_bg from "../assets/images/chicken_bg.jpg";
 import cook_bg from "../assets/images/cook_bg.jpg";
-import ButtonPrimary from "../components/Button/ButtonPrimary";
+import ButtonLink from "../components/Button/ButtonLink";
 import Carousel from "../components/Carousel/Carousel";
 import BackgroundImage from "../components/Main/BackgroundImage";
 import TitlePrimary from "../components/Main/TitlePrimary";
 import TitleSecondary from "../components/Main/TitleSecondary";
 import Text from "../components/Main/Text";
 import Testimonial from "../components/Testimonial/Testimonial";
+import NewsletterForm from "../components/Newsletter/NewsletterForm";
+import { useIsVisible } from "react-is-visible";
 
 export default function Home() {
+  const orderSectionRef = useRef();
+  const isVisible = useIsVisible(orderSectionRef, { once: true });
+
+  const menuSectionRef = useRef();
+  const isVisible2 = useIsVisible(menuSectionRef, { once: true });
+
   return (
     <div className="flex flex-col gap-20 bg-white overflow-hidden -mt-20">
       <Head>
@@ -21,10 +30,10 @@ export default function Home() {
         <Carousel />
       </header>
       <main className="flex flex-col gap-4 tablet:gap-20">
-        <section>
+        <section ref={orderSectionRef}>
           <div className="container flex flex-col tablet:flex-row gap-4 max-w-[90%] relative">
             <div className="flex flex-col justify-center basis-1/3 min-w-[16rem] tablet:max-w-[20rem] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
-              <div className="flex flex-col items-center text-center border-y border-y-personal-neutralLight py-4">
+              <div className="flex flex-col items-center text-center border-y border-y-personal-neutralDark py-4">
                 <TitlePrimary title="order online" />
                 <TitleSecondary title="pickup/delivery" />
               </div>
@@ -34,7 +43,7 @@ export default function Home() {
                   Molestias obcaecati aperiam itaque et porro. Odit dolor
                   placeat praesentium! Asperiores, itaque?"
                 />
-                <ButtonPrimary url="#">ORDER ONLINE</ButtonPrimary>
+                <ButtonLink url="#!">order online</ButtonLink>
               </div>
             </div>
             <div className="basis-3/4 rounded-lg">
@@ -42,10 +51,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
+        <section ref={menuSectionRef}>
           <div className="container flex flex-col tablet:flex-row-reverse gap-4 max-w-[90%] relative">
             <div className="flex flex-col justify-center basis-1/3 min-w-[16rem] tablet:max-w-[20rem] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8">
-              <div className="flex flex-col-reverse items-center text-center border-y border-y-personal-neutralLight py-4">
+              <div className="flex flex-col-reverse items-center text-center border-y border-y-personal-neutralDark py-4">
                 <TitlePrimary title="the menu" />
                 <TitleSecondary title="what's on" />
               </div>
@@ -55,7 +64,7 @@ export default function Home() {
                   Molestias obcaecati aperiam itaque et porro. Odit dolor
                   placeat praesentium! Asperiores, itaque?"
                 />
-                <ButtonPrimary url="#">VIEW MENU</ButtonPrimary>
+                <ButtonLink url="#!">view menu</ButtonLink>
               </div>
             </div>
             <div className="basis-3/4">
@@ -65,10 +74,15 @@ export default function Home() {
         </section>
         <section>
           <div className="container relative max-w-[90%] border-4 border-personal-neutralDark rounded-lg py-4 tablet:py-8">
-            <div className="flex flex-col justify-center items-center gap-y-4">
+            <div className="flex flex-col justify-center items-center gap-y-4 tablet:gap-y-8 text-center">
               <TitlePrimary title="CUSTOMERS REVIEW" />
               <Testimonial />
             </div>
+          </div>
+        </section>
+        <section>
+          <div className="container relative max-w-full">
+            <NewsletterForm />
           </div>
         </section>
       </main>

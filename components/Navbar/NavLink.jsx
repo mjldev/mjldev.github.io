@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const NavbarLink = (props) => {
   return (
-    <li onClick={props.click}>
+    <li onClick={props.onClick}>
       <Link href={props.url}>
-        <a className="block font-oswald font-semibold hover:text-personal-primary">{props.children}</a>
+        <a className="block font-oswald font-semibold uppercase hover:text-personal-textHoverPrimary">{props.children}</a>
       </Link>
     </li>
   );
