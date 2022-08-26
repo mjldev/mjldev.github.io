@@ -27,14 +27,14 @@ const OurMenu = () => {
           <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
         )}
         <Overlay />
-        <div className="container relative flex justify-center flex-col min-h-[85vh] max-w-full mr-auto ml-auto">
+        <div className="container relative flex justify-center flex-col min-h-[100vh] max-w-full mr-auto ml-auto">
           <div className="grid grid-col-1 justify-items-center text-center gap-8 px-4">
             <Title heading="MJL KITCHEN MENU" />
             <ButtonPrimary url="/contact-us">ORDER ONLINE</ButtonPrimary>
           </div>
         </div>
       </header>
-      <main className="flex flex-col gap-10 tablet:gap-20">
+      <main className="flex flex-col gap-10 tablet:gap-20 -mt-28">
         <section>
           <div className="container relative max-w-full">
             <div className="flex">
