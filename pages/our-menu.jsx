@@ -35,7 +35,7 @@ const OurMenu = () => {
         </div>
       </header>
       <main className="flex flex-col gap-10 tablet:gap-20">
-        <section className="-mt-28">
+        <section>
           <div className="container relative max-w-full">
             <div className="flex">
               <button
