@@ -26,12 +26,6 @@ const OurMenu = () => {
         {beefTab && (
           <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
         )}
-        <div className="container relative flex justify-center flex-col min-h-[100vh] max-w-full mr-auto ml-auto">
-          <div className="grid grid-col-1 justify-items-center text-center gap-8 px-4">
-            <Title heading="MJL KITCHEN MENU" />
-            <ButtonPrimary url="/contact-us">ORDER ONLINE</ButtonPrimary>
-          </div>
-        </div>
       </header>
       <main>
         <section>
