@@ -35,8 +35,8 @@ const Testimonial = () => {
         <div className="container flex gap-4">
           {TestimonialItem.map((item, index) => {
             return (
-              <div key={index} className="relative min-w-full">
-                <div className="flex flex-col justify-center items-center text-center gap-y-4 relative overflow-hidden px-4 laptop:px-16">
+              <div key={index} className="relative min-w-full px-4 laptop:px-16">
+                <div className="flex flex-col justify-center items-center text-center gap-y-4 relative px-4 overflow-hidden">
                   <p className="text-personal-textPrimary leading-relaxed text-base">{item.text}</p>
                   <StartRating />
                   <p className="text-personal-textPrimary font-oswald text-base">
@@ -48,7 +48,7 @@ const Testimonial = () => {
           })}
         </div>
       </div>
-      <div className="hidden tablet:flex justify-between w-full gap-x-4 absolute">
+      <div className="hidden laptop:flex justify-between w-full gap-x-4 absolute">
         <PreviousButton onClick={scrollPrev} enabled={prevBtnEnabled} />
         <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
       </div>

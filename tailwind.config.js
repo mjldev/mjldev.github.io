@@ -17,8 +17,8 @@ module.exports = {
       colors: {
         personal: {
           primary: "#F24150",
-          secondary: "#D93636",
-          accent: "#731F1F",
+          secondary: "#F2B705",
+          accent: "#F244C4",
           neutralDark: "#261C1F",
           neutralLight: "#A69286",
 

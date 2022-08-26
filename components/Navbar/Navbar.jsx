@@ -36,24 +36,22 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`top-0 sticky z-50 text-personal-textPrimary bg-white tablet:bg-transparent bg-gradient-to-r from-white to-white bg-no-repeat transition-all duration-200 ease-out ${
+        className={`top-0 sticky z-50 text-personal-textPrimary bg-white tablet:bg-transparent bg-gradient-to-r from-white to-white bg-no-repeat transition-all duration-200 ease-out hover:bg-[length:100%_100%] hover:text-personal-textPrimary ${
           nav
             ? "bg-[length:100%_0%] tablet:text-white"
             : "bg-[length:100%_100%] text-personal-textPrimary"
         }`}
       >
-        <div className="container flex items-center bg-inherit py-4 max-w-[90%]">
-          <div className="flex flex-1 justify-start">
-            <Link href="/">
-              <a className="font-oswald font-bold select-none text-4xl laptop:text-5xl whitespace-nowrap">
-                MJL KITCHEN
-              </a>
-            </Link>
-          </div>
+        <div className="container flex items-center justify-between bg-inherit py-4 max-w-[90%]">
+          <Link href="/">
+            <a className="font-oswald font-bold select-none text-4xl laptop:text-5xl whitespace-nowrap">
+              MJL KITCHEN
+            </a>
+          </Link>
           <ul
-            className={`flex justify-center flex-col tablet:flex-row tablet:top-0 left-0 flex-1 items-center gap-4 laptop:gap-8 bg-inherit w-full text-lg whitespace-nowrap px-4 laptop:px-0 py-8 tablet:py-0 absolute tablet:relative z-[-1] ${
+            className={`flex flex-col tablet:flex-row tablet:top-0 left-0 items-center gap-4 laptop:gap-8 bg-inherit w-full tablet:w-auto text-lg whitespace-nowrap px-4 laptop:px-0 py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
               dropdown
-                ? "top-[68px] transition-all duration-300 ease-in border-y"
+                ? "top-[72px] transition-all duration-700 ease-in border-y"
                 : "-top-80"
             }`}
           >
@@ -70,32 +68,20 @@ const Navbar = () => {
               contact us
             </NavLink>
           </ul>
-          <div className="flex flex-1 gap-4 justify-end">
-            <button
-              onClick={() => setDropdown(!dropdown)}
-              className={`h-6 w-6 tablet:hidden ${
-                dropdown
-                  ? "skew-y-12 transition-all duration-300 ease-in"
-                  : "skew-y-0"
-              }`}
-            >
-              {dropdown ? (
-                <AiOutlineClose className="h-full w-full" />
-              ) : (
-                <AiOutlineMenu className="h-full w-full" />
-              )}
-            </button>
-            <button
-              onClick={() => {
-                setCart(true),
-                  setDropdown(false),
-                  (document.body.style.overflow = "hidden");
-              }}
-              className="h-6 w-6"
-            >
-              <BsHandbag className="h-full w-full" />
-            </button>
-          </div>
+          <button
+            onClick={() => setDropdown(!dropdown)}
+            className={`h-8 w-8 tablet:hidden ${
+              dropdown
+                ? "skew-y-12 transition-all duration-300 ease-in"
+                : "skew-y-0"
+            }`}
+          >
+            {dropdown ? (
+              <AiOutlineClose className="h-full w-full" />
+            ) : (
+              <AiOutlineMenu className="h-full w-full" />
+            )}
+          </button>
         </div>
         {cart && (
           <div className="flex justify-end absolute top-0 right-0 w-screen h-screen border">
