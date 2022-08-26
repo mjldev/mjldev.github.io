@@ -35,11 +35,21 @@ const Testimonial = () => {
         <div className="container flex gap-4">
           {TestimonialItem.map((item, index) => {
             return (
-              <div key={index} className="relative min-w-full px-4 laptop:px-16">
-                <div className="flex flex-col justify-center items-center text-center gap-y-4 relative px-4 overflow-hidden">
-                  <p className="text-personal-textPrimary leading-relaxed text-base">{item.text}</p>
+              <div
+                key={index}
+                className="relative min-w-full px-4 laptop:px-16"
+              >
+                <div className="flex flex-col justify-center items-center  gap-y-4 relative px-4 overflow-hidden">
+                  <p className="text-personal-textPrimary text-2xl font-bold uppercase">
+                    <span className="text-2xl font-bold">&quot;</span>
+                    {item.title}
+                    <span className="text-2xl font-bold">&quot;</span>
+                  </p>
+                  <p className="text-personal-textPrimary leading-relaxed text-base">
+                    {item.text}
+                  </p>
                   <StartRating />
-                  <p className="text-personal-textPrimary font-oswald text-base">
+                  <p className="text-personal-textPrimary font-oswald font-semibold text-base">
                     {item.name}
                   </p>
                 </div>

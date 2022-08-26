@@ -23,12 +23,15 @@ module.exports = {
           neutralLight: "#A69286",
 
           textPrimary: "#261C1F",
+          textSecondary: "#A69286",
           textHoverPrimary: "#F24150",
 
           buttonPrimary: "#F24150",
           buttonSecondary: "#A69286",
           buttonHoverPrimary: "#D93636",
           buttonHoverSecondary: "#261C1F",
+
+          borderDark: "#261C1F",
         },
       },
       container: {

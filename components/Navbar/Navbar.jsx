@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { BsHandbag } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
+import SocialMedia from "../SocialMedia.jsx/SocialMedia";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -43,19 +44,21 @@ const Navbar = () => {
         }`}
       >
         <div className="container flex items-center justify-between bg-inherit py-4 max-w-[90%]">
-          <Link href="/">
-            <a className="font-oswald font-bold select-none text-4xl laptop:text-5xl whitespace-nowrap">
-              MJL KITCHEN
-            </a>
-          </Link>
+          <div className="flex flex-1 justify-start">
+            <Link href="/">
+              <a className="font-oswald font-bold select-none text-4xl laptop:text-5xl whitespace-nowrap">
+                MJL KITCHEN
+              </a>
+            </Link>
+          </div>
           <ul
-            className={`flex flex-col tablet:flex-row tablet:top-0 left-0 items-center gap-4 laptop:gap-8 bg-inherit w-full tablet:w-auto text-lg whitespace-nowrap px-4 laptop:px-0 py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
+            className={`flex flex-2 flex-col tablet:flex-row tablet:top-0 left-0 justify-center items-center gap-8 bg-inherit w-full tablet:w-auto whitespace-nowrap py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
               dropdown
-                ? "top-[72px] transition-all duration-700 ease-in border-y"
-                : "-top-80"
+                ? "text-2xl top-0 min-h-screen transition-all duration-300 ease-in"
+                : "text-base -top-80"
             }`}
           >
-            <NavLink onClick={() => setDropdown(false)} url="#">
+            <NavLink onClick={() => setDropdown(false)} url="/our-menu">
               our menu
             </NavLink>
             <NavLink onClick={() => setDropdown(false)} url="#">
@@ -67,13 +70,19 @@ const Navbar = () => {
             <NavLink onClick={() => setDropdown(false)} url="#">
               contact us
             </NavLink>
+            <div className="tablet:hidden">
+              <SocialMedia />
+            </div>
           </ul>
+          <div className="flex-1 hidden laptop:flex justify-end">
+            <SocialMedia />
+          </div>
           <button
             onClick={() => setDropdown(!dropdown)}
             className={`h-8 w-8 tablet:hidden ${
               dropdown
-                ? "skew-y-12 transition-all duration-300 ease-in"
-                : "skew-y-0"
+                ? "rotate-90 transition-all duration-300 ease-in"
+                : "rotate-1"
             }`}
           >
             {dropdown ? (
@@ -83,27 +92,6 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        {cart && (
-          <div className="flex justify-end absolute top-0 right-0 w-screen h-screen border">
-            <div className="bg-black w-full opacity-80" />
-            <div className="flex flex-col tablet:flex-[1_1_30%] min-w-[100%] tablet:min-w-[35ch] h-screen bg-white text-personal-textPrimary">
-              <div className="flex justify-between border-b py-5 px-4">
-                <span className="font-bold text-xl">YOUR CART</span>
-                <button
-                  onClick={() => {
-                    setCart(false), (document.body.style.overflow = "auto");
-                  }}
-                  className="h-6 w-6"
-                >
-                  <AiOutlineClose className="h-full w-full" />
-                </button>
-              </div>
-              <div className="flex justify-center">
-                <p className="text-personal-textPrimary">Your cart is empty.</p>
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
     </>
   );

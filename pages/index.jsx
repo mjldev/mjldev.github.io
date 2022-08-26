@@ -41,16 +41,12 @@ export default function Home() {
               open={orderIsVisible}
               className="flex flex-col justify-center basis-1/3 min-w-[16rem] tablet:max-w-[20rem] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8"
             >
-              <div className="flex flex-col items-center text-cente border-y border-y-personal-neutralDark py-4">
+              <div className="flex flex-col items-center text-cente border-y-4 border-y-personal-borderDark py-4">
                 <TitlePrimary title="order online" />
                 <TitleSecondary title="pickup/delivery" />
               </div>
               <div className="flex flex-col items-start gap-4 tablet:gap-8">
-                <Text
-                  text="Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Molestias obcaecati aperiam itaque et porro. Odit dolor
-                  placeat praesentium! Asperiores, itaque?"
-                />
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure at, vero voluptatum deserunt inventore possimus repudiandae aspernatur facilis tenetur similique porro? Qui in repudiandae labore blanditiis quos, distinctio dolores excepturi." />
                 <ButtonLink url="#!">order now</ButtonLink>
               </div>
             </FadeUpTrail>
@@ -68,16 +64,12 @@ export default function Home() {
               open={menuIsVisible}
               className="flex flex-col justify-center basis-1/3 min-w-[16rem] tablet:max-w-[20rem] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8"
             >
-              <div className="flex flex-col-reverse items-center text-center border-y border-y-personal-neutralDark py-4">
+              <div className="flex flex-col-reverse items-center text-center border-y-4 border-y-personal-borderDark py-4">
                 <TitlePrimary title="the menu" />
                 <TitleSecondary title="what's on" />
               </div>
               <div className="flex flex-col items-start gap-4 tablet:gap-8">
-                <Text
-                  text="Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Molestias obcaecati aperiam itaque et porro. Odit dolor
-                  placeat praesentium! Asperiores, itaque?"
-                />
+                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repudiandae enim consequuntur modi ex repellat ad minus laborum culpa minima!" />
                 <ButtonLink url="#!">view menu</ButtonLink>
               </div>
             </FadeUpTrail>

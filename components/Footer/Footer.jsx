@@ -1,7 +1,6 @@
 import React from "react";
 import FooterLink from "./FooterLink";
-import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
-import { FaFacebookF } from "react-icons/fa";
+import SocialMedia from "../SocialMedia.jsx/SocialMedia";
 
 const Footer = () => {
   return (
@@ -17,11 +16,7 @@ const Footer = () => {
             <FooterLink url="#!">about us</FooterLink>
             <FooterLink url="#!">contact us</FooterLink>
           </ul>
-          <ul className="flex justify-center gap-x-8">
-            <FooterLink url="#!"><FaFacebookF className="w-8 h-8"/></FooterLink>
-            <FooterLink url="#!"><AiOutlineInstagram className="w-8 h-8"/></FooterLink>
-            <FooterLink url="#!"><AiOutlineTwitter className="w-8 h-8"/></FooterLink>
-          </ul>
+          <SocialMedia/>
           <p className="text-base text-personal-textPrimary">©2022 MJL KITCHEN</p>
         </div>
       </section>
