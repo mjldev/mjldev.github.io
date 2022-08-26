@@ -18,7 +18,7 @@ const OurMenu = () => {
 
   return (
     <div className="overflow-hidden">
-      <header className="tablet:-mt-20">
+      <header className="-mt-20">
         {chickenTab && (
           <BackgroundImage url={chicken_bg.src} alt="Chicken Adobo" />
         )}
@@ -26,7 +26,7 @@ const OurMenu = () => {
         {beefTab && (
           <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
         )}
-        <div className="container relative flex justify-center flex-col min-h-screen max-w-full tablet:-mt-20">
+        <div className="container relative flex justify-center flex-col min-h-screen max-w-full -mt-20">
           <div className="grid grid-col-1 justify-items-center text-center gap-8 px-4">
             <Title heading="MJL KITCHEN MENU" />
             <ButtonPrimary url="/contact-us">ORDER ONLINE</ButtonPrimary>
