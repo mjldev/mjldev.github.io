@@ -17,17 +17,20 @@ const OurMenu = () => {
   const [beefTab, setBeefTab] = useState(false);
 
   return (
-    <div>
-      <header className="tablet:-mt-20 w-full min-h-screen">
-        <img
-          src={chicken_bg.src}
-          alt=""
-          className="absolute w-full h-full object-cover"
-        />
-        <div className="absolute bg-black opacity-50 w-full h-full" />
-        <div className="container relative flex flex-col justify-center items-center text-center gap-y-8 max-w-full min-h-screen">
-          <Title heading="MJL KITCHEN MENU" />
-          <ButtonPrimary url="/contact-us">ORDER ONLINE</ButtonPrimary>
+    <div className="overflow-hidden">
+      <header className="tablet:-mt-20">
+        {chickenTab && (
+          <BackgroundImage url={chicken_bg.src} alt="Chicken Adobo" />
+        )}
+        {porkTab && <BackgroundImage url={pork_bg.src} alt="Pork Pata Humba" />}
+        {beefTab && (
+          <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
+        )}
+        <div className="container relative flex justify-center flex-col min-h-[100vh] max-w-full mr-auto ml-auto">
+          <div className="grid grid-col-1 justify-items-center text-center gap-8 px-4">
+            <Title heading="MJL KITCHEN MENU" />
+            <ButtonPrimary url="/contact-us">ORDER ONLINE</ButtonPrimary>
+          </div>
         </div>
       </header>
       <main>
