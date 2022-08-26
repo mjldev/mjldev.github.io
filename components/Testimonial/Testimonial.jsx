@@ -30,7 +30,7 @@ const Testimonial = () => {
   }, [embla, onSelect]);
 
   return (
-    <div className="flex justify-center items-center relative max-w-full laptop:max-w-[50vw] mx-auto">
+    <div className="flex justify-center items-center relative max-w-full laptop:max-w-[5c0vw] mx-auto">
       <div className="w-full overflow-hidden" ref={viewportRef}>
         <div className="container flex gap-4">
           {TestimonialItem.map((item, index) => {
