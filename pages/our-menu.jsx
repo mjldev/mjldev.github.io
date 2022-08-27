@@ -1,11 +1,4 @@
 import React, { useState } from "react";
-import Overlay from "../components/Header/Overlay";
-import Title from "../components/Header/Title";
-import ButtonPrimary from "../components/Button/ButtonPrimary";
-import BackgroundImage from "../components/Header/BackgroundImage";
-import ChickenMenu from "../components/MenuTab/ChickenMenu";
-import PorkMenu from "../components/MenuTab/PorkMenu";
-import BeefMenu from "../components/MenuTab/BeefMenu";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import { MenuTab } from "../components/MenuTab/MenuTab";
 
