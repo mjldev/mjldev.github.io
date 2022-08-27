@@ -17,7 +17,7 @@ const OurMenu = () => {
   const [beefTab, setBeefTab] = useState(false);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden -mt-20">
       <header>
         <div className="w-screen object-contain">
           <div className="relative">
@@ -41,7 +41,7 @@ const OurMenu = () => {
         </div>
       </header>
       <main>
-        <section>
+        <section className="-mt-28">
           <div className="container flex max-w-full relative">
             <button
               onClick={() => {
