@@ -11,7 +11,7 @@ const ChickenMenu = () => {
     <div ref={nodeRef}>
       <FadeRightTrail
         open={isVisible}
-        className="flex flex-col items-center text-center"
+        className="flex flex-col items-center text-center py-10"
       >
         <Title title="chicken adobo" />
         <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />

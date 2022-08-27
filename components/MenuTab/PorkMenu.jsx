@@ -12,7 +12,7 @@ const PorkMenu = () => {
     <div ref={nodeRef}>
       <FadeUpTrail
         open={isVisible}
-        className="flex flex-col items-center text-center"
+        className="flex flex-col items-center text-center py-10"
       >
         <Title title="pork pata humba" />
         <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />

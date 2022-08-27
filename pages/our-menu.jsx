@@ -41,13 +41,13 @@ const OurMenu = () => {
         </div>
       </header>
       <main>
-        <section className="-mt-28">
+        <section className="-mt-24 tablet:-mt-28">
           <div className="container flex max-w-full relative">
             <button
               onClick={() => {
                 setChickenTab(true), setPorkTab(false), setBeefTab(false);
               }}
-              className={`flex-1 font-oswald font-semibold text-4xl uppercase py-10 border-t ${
+              className={`flex-1 font-oswald font-semibold text-xl tablet:text-2xl laptop:text-4xl uppercase py-10 border-t ${
                 chickenTab
                   ? "bg-white text-personal-textPrimary"
                   : "bg-transparent text-white"
@@ -59,7 +59,7 @@ const OurMenu = () => {
               onClick={() => {
                 setChickenTab(false), setPorkTab(true), setBeefTab(false);
               }}
-              className={`flex-1 font-oswald font-semibold text-4xl uppercase py-10 border-t ${
+              className={`flex-1 font-oswald font-semibold text-xl tablet:text-2xl laptop:text-4xl uppercase py-10 border-t ${
                 porkTab
                   ? "bg-white text-personal-textPrimary"
                   : "bg-transparent text-white"
@@ -71,7 +71,7 @@ const OurMenu = () => {
               onClick={() => {
                 setChickenTab(false), setPorkTab(false), setBeefTab(true);
               }}
-              className={`flex-1 font-oswald font-semibold text-4xl uppercase py-10 border-t ${
+              className={`flex-1 font-oswald font-semibold text-xl tablet:text-2xl laptop:text-4xl uppercase py-10 border-t ${
                 beefTab
                   ? "bg-white text-personal-textPrimary"
                   : "bg-transparent text-white"
