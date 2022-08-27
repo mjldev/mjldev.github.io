@@ -1,84 +1,74 @@
 import React, { useState } from "react";
 import Overlay from "../components/Header/Overlay";
 import Title from "../components/Header/Title";
-import pork_bg from "../assets/images/pork_bg.jpg";
-import beef_bg from "../assets/images/beef_bg.jpg";
-import chicken_bg from "../assets/images/chicken_bg.jpg";
-import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import ButtonPrimary from "../components/Button/ButtonPrimary";
 import BackgroundImage from "../components/Header/BackgroundImage";
 import ChickenMenu from "../components/MenuTab/ChickenMenu";
 import PorkMenu from "../components/MenuTab/PorkMenu";
 import BeefMenu from "../components/MenuTab/BeefMenu";
+import NewsletterForm from "../components/Newsletter/NewsletterForm";
+import { MenuTab } from "../components/MenuTab/MenuTab";
 
 const OurMenu = () => {
-  const [chickenTab, setChickenTab] = useState(true);
-  const [porkTab, setPorkTab] = useState(false);
-  const [beefTab, setBeefTab] = useState(false);
+  const [currentTab, setCurrentTab] = useState("1");
+
+  const handleTabClick = (e) => {
+    setCurrentTab(e.target.id);
+  };
 
   return (
     <div className="overflow-hidden">
-      <header className="-mt-20">
-        {chickenTab && (
-          <BackgroundImage url={chicken_bg.src} alt="Chicken Adobo" />
-        )}
-        {porkTab && <BackgroundImage url={pork_bg.src} alt="Pork Pata Humba" />}
-        {beefTab && (
-          <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
-        )}
-        <div className="container relative flex justify-center flex-col min-h-screen max-w-full -mt-20">
-          <div className="grid grid-col-1 justify-items-center text-center gap-8 px-4">
-            <Title heading="MJL KITCHEN MENU" />
-            <ButtonPrimary url="/contact-us">ORDER ONLINE</ButtonPrimary>
+      <header>
+        {MenuTab.map((MenuTab, i) => (
+          <div key={i} className="w-screen object-contain">
+            {currentTab === `${MenuTab.id}` && (
+              <div className="relative">
+                <img
+                  src={MenuTab.image}
+                  alt={MenuTab.alt}
+                  className="absolute w-full h-full object-cover"
+                />
+                <div className="absolute bg-black opacity-50 w-full h-full" />
+                <div className="container flex justify-center flex-col min-h-[60vh] max-w-[90%] relative">
+                  <div className="flex flex-col items-start gap-y-4">
+                    <p className="font-oswald font-bold text-2xl desktop:text-4xl text-white uppercase underline underline-offset-8  decoration-4">
+                      must try!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
-        </div>
+        ))}
       </header>
       <main>
         <section>
-          <div className="container max-w-[90%] relative">
-            {chickenTab && <ChickenMenu />}
-            {porkTab && <PorkMenu />}
-            {beefTab && <BeefMenu />}
+          <div className="container flex justify-between max-w-full relative">
+            {MenuTab.map((MenuTab, i) => (
+              <button
+                className="flex-1 bg-transparent hover:bg-gray-300 disabled:bg-gray-500 border transition-all duration-300 ease-ou py-4"
+                key={i}
+                id={MenuTab.id}
+                disabled={currentTab === `${MenuTab.id}`}
+                onClick={handleTabClick}
+              >
+                {MenuTab.tabTitle}
+              </button>
+            ))}
           </div>
         </section>
         <section>
-          <div className="container flex max-w-full relative">
-            <button
-              onClick={() => {
-                setChickenTab(true), setPorkTab(false), setBeefTab(false);
-              }}
-              className={`flex-1 font-oswald font-semibold text-4xl uppercase py-10 border-t ${
-                chickenTab
-                  ? "bg-white text-personal-textPrimary"
-                  : "bg-transparent text-white"
-              }`}
-            >
-              chicken
-            </button>
-            <button
-              onClick={() => {
-                setChickenTab(false), setPorkTab(true), setBeefTab(false);
-              }}
-              className={`flex-1 font-oswald font-semibold text-4xl uppercase py-10 border-t ${
-                porkTab
-                  ? "bg-white text-personal-textPrimary"
-                  : "bg-transparent text-white"
-              }`}
-            >
-              pork
-            </button>
-            <button
-              onClick={() => {
-                setChickenTab(false), setPorkTab(false), setBeefTab(true);
-              }}
-              className={`flex-1 font-oswald font-semibold text-4xl uppercase py-10 border-t ${
-                beefTab
-                  ? "bg-white text-personal-textPrimary"
-                  : "bg-transparent text-white"
-              }`}
-            >
-              beef
-            </button>
+          <div className="container max-w-[90%] relative">
+            {MenuTab.map((MenuTab, i) => (
+              <div key={i}>
+                {currentTab === `${MenuTab.id}` && (
+                  <div className="flex flex-col items-center text-center py-20">
+                    <p className="title">{MenuTab.title}</p>
+                    <p>{MenuTab.content}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
         <section>

@@ -67,7 +67,7 @@ const Navbar = () => {
             <NavLink onClick={() => setDropdown(false)} url="#">
               about us
             </NavLink>
-            <NavLink onClick={() => setDropdown(false)} url="#">
+            <NavLink onClick={() => setDropdown(false)} url="/contact-us">
               contact us
             </NavLink>
             <div className="tablet:hidden">

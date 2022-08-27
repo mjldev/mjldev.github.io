@@ -40,9 +40,9 @@ const Carousel = () => {
     <div className="flex justify-center max-w-full h-auto relative">
       <div className="overflow-hidden" ref={viewportRef}>
         <div className="grid grid-flow-col">
-          {CarouselItem.map((item, index) => {
+          {CarouselItem.map((item, i) => {
             return (
-              <div key={index} className="w-screen object-contain">
+              <div key={i} className="w-screen object-contain">
                 <div className="relative">
                   <img
                     src={item.image}
