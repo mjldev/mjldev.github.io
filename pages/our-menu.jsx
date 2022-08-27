@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
-import { Tab } from "../components/MenuTab/Tab";
+import { MenuTab } from "../components/MenuTab/Tab";
 
 const OurMenu = () => {
   const [currentTab, setCurrentTab] = useState("1");
@@ -12,13 +12,13 @@ const OurMenu = () => {
   return (
     <div className="overflow-hidden">
       <header>
-        {Tab.map((Tab, i) => (
+        {MenuTab.map((MenuTab, i) => (
           <div key={i} className="w-screen object-contain">
-            {currentTab === `${Tab.id}` && (
+            {currentTab === `${MenuTab.id}` && (
               <div className="relative">
                 <img
-                  src={Tab.image}
-                  alt={Tab.alt}
+                  src={MenuTab.image}
+                  alt={MenuTab.alt}
                   className="absolute w-full h-full object-cover"
                 />
                 <div className="absolute bg-black opacity-50 w-full h-full" />
@@ -37,27 +37,27 @@ const OurMenu = () => {
       <main>
         <section>
           <div className="container flex justify-between max-w-full relative">
-            {Tab.map((Tab, i) => (
+            {MenuTab.map((MenuTab, i) => (
               <button
                 className="flex-1 bg-transparent hover:bg-gray-300 disabled:bg-gray-500 border transition-all duration-300 ease-ou py-4"
                 key={i}
-                id={Tab.id}
-                disabled={currentTab === `${Tab.id}`}
+                id={MenuTab.id}
+                disabled={currentTab === `${MenuTab.id}`}
                 onClick={handleTabClick}
               >
-                {Tab.tabTitle}
+                {MenuTab.tabTitle}
               </button>
             ))}
           </div>
         </section>
         <section>
           <div className="container max-w-[90%] relative">
-            {Tab.map((Tab, i) => (
+            {MenuTab.map((MenuTab, i) => (
               <div key={i}>
-                {currentTab === `${Tab.id}` && (
+                {currentTab === `${MenuTab.id}` && (
                   <div className="flex flex-col items-center text-center py-20">
-                    <p className="title">{Tab.title}</p>
-                    <p>{Tab.content}</p>
+                    <p className="title">{MenuTab.title}</p>
+                    <p>{MenuTab.content}</p>
                   </div>
                 )}
               </div>
