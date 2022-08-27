@@ -21,24 +21,27 @@ const OurMenu = () => {
       <header>
         <div className="w-screen object-contain">
           <div className="relative">
-            <img
-              src={chicken_bg.src}
-              alt="Chicken"
-              className="absolute w-full h-full object-cover"
-            />
-            <div className="absolute bg-black opacity-50 w-full h-full" />
-            <div className="container flex justify-center flex-col min-h-[60vh] max-w-[90%] relative">
-              <div className="flex flex-col items-start gap-y-4">
-                <p className="font-oswald font-bold text-2xl desktop:text-4xl text-white uppercase underline underline-offset-8  decoration-4">
-                  must try!
-                </p>
+            {chickenTab && (
+              <BackgroundImage url={chicken_bg.src} alt="Chicken Adobo" />
+            )}
+            {porkTab && (
+              <BackgroundImage url={pork_bg.src} alt="Pork Pata Humba" />
+            )}
+            {beefTab && (
+              <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
+            )}
+            <Overlay/>
+            <div className="container flex justify-center flex-col min-h-[100vh] max-w-[90%] relative">
+              <div className="flex flex-col items-center gap-y-4">
+                <Title heading="mjl kitchen menu"/>
+                <ButtonPrimary>order online</ButtonPrimary>
               </div>
             </div>
           </div>
         </div>
       </header>
       <main>
-      <section>
+        <section>
           <div className="container flex max-w-full relative">
             <button
               onClick={() => {
