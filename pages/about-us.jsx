@@ -12,8 +12,6 @@ import FadeUpTransition from "../components/Animation/FadeUpTransition";
 import FadeLeftTransition from "../components/Animation/FadeLeftTransition";
 import FadeRightTransition from "../components/Animation/FadeRightTransition";
 import { useIsVisible } from "react-is-visible";
-import TitlePrimary from "../components/Main/TitlePrimary";
-import TitleSecondary from "../components/Main/TitleSecondary";
 
 const AboutUs = () => {
   const aboutUsRef = useRef();
@@ -44,12 +42,16 @@ const AboutUs = () => {
         </div>
       </header>
       <section ref={aboutUsRef}>
-        <FadeUpTrail open={aboutUsIsVisible} className="container flex flex-col gap-4 max-w-[90%] tablet:max-w-[70%] laptop:max-w-[50%] relative">
-          <div className="flex flex-col items-center text-cente border-y-4 border-y-personal-borderDark py-4">
-            <TitlePrimary title="our team" />
+        <FadeUpTrail
+          open={aboutUsIsVisible}
+          className="container flex flex-col gap-4 max-w-[90%] tablet:max-w-[70%] laptop:max-w-[50%] relative"
+        >
+          <div className="flex flex-col items-center text-center border-y-4 border-y-personal-borderDark py-4">
+            <p className="text-personal-textPrimary font-oswald uppercase font-bold text-4xl desktop:text-5xl">our team</p>
+            <p className="text-personal-textPrimary font-semibold uppercase text-base desktop:text-xl">passion for food</p>
           </div>
           <div className="flex flex-col items-start gap-4 tablet:gap-8">
-            <p>
+            <p className="text-personal-textPrimary text-base leading-8">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
               atque sit omnis laborum corrupti adipisci minima dicta dolore
               consequatur voluptate vero autem, doloribus cum amet et fugit
@@ -63,8 +65,14 @@ const AboutUs = () => {
       <section>
         <div className="container max-w-[90%] tablet:max-w-full relative">
           <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            <div ref={restaurantRef} className="flex justify-center items-center">
-              <FadeRightTransition open={restaurantRefIsVisible} className=" tablet:h-[70%] tablet:w-[100%]">
+            <div
+              ref={restaurantRef}
+              className="flex justify-center items-center"
+            >
+              <FadeRightTransition
+                open={restaurantRefIsVisible}
+                className=" tablet:h-[70%] tablet:w-[100%]"
+              >
                 <img
                   src={restaurant.src}
                   alt=""
@@ -73,7 +81,10 @@ const AboutUs = () => {
               </FadeRightTransition>
             </div>
             <div ref={chefRef} className="tablet:row-span-2 flex justify-end">
-              <FadeLeftTransition open={chefIsVisible} className="tablet:h-[80%] tablet:w-[90%]">
+              <FadeLeftTransition
+                open={chefIsVisible}
+                className=" tablet:h-[80%] tablet:w-[90%]"
+              >
                 <img
                   src={chef.src}
                   alt=""
@@ -82,7 +93,10 @@ const AboutUs = () => {
               </FadeLeftTransition>
             </div>
             <div ref={teamRef} className="flex justify-center items-end">
-              <FadeUpTransition open={teamRefIsVisible} className="tablet:h-[80%] tablet:w-[80%]">
+              <FadeUpTransition
+                open={teamRefIsVisible}
+                className="tablet:h-[80%] tablet:w-[80%]"
+              >
                 <img
                   src={team.src}
                   alt=""

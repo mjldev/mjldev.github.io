@@ -13,6 +13,8 @@ import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import { useIsVisible } from "react-is-visible";
 import FadeUpTrail from "../components/Animation/FadeUpTrail";
 import FadeUpTransition from "../components/Animation/FadeUpTransition";
+import FadeLeftTransition from "../components/Animation/FadeLeftTransition";
+import FadeRightTransition from "../components/Animation/FadeRightTransition";
 
 export default function Home() {
   const orderRef = useRef();
@@ -50,12 +52,12 @@ export default function Home() {
                 <ButtonLink url="#!">order now</ButtonLink>
               </div>
             </FadeUpTrail>
-            <FadeUpTransition
+            <FadeLeftTransition
               open={orderIsVisible}
               className="basis-3/4 rounded-lg"
             >
               <BackgroundImage url={cook_bg.src} alt="Chef Cooking" />
-            </FadeUpTransition>
+            </FadeLeftTransition>
           </div>
         </section>
         <section ref={menuRef}>
@@ -73,20 +75,21 @@ export default function Home() {
                 <ButtonLink url="#!">view menu</ButtonLink>
               </div>
             </FadeUpTrail>
-            <FadeUpTransition open={menuIsVisible} className="basis-3/4">
+            <FadeRightTransition open={menuIsVisible} className="basis-3/4">
               <BackgroundImage url={chicken_bg.src} alt="Chicken Adobo" />
-            </FadeUpTransition>
+            </FadeRightTransition>
           </div>
         </section>
         <section ref={testimonialRef}>
-          <div className="container relative max-w-[90%] border-4 border-personal-neutralDark rounded-lg py-4 tablet:py-8">
-            <FadeUpTransition open={testimonialIsVisible}>
-              <div className="flex flex-col justify-center items-center gap-y-4 tablet:gap-y-8 text-center">
-                <TitlePrimary title="CUSTOMERS REVIEW" />
-                <Testimonial />
-              </div>
-            </FadeUpTransition>
-          </div>
+          <FadeUpTransition
+            open={testimonialIsVisible}
+            className="container relative max-w-[90%] border-4 border-personal-neutralDark rounded-lg py-4 tablet:py-8"
+          >
+            <div className="flex flex-col justify-center items-center gap-y-4 tablet:gap-y-8 text-center">
+              <TitlePrimary title="CUSTOMERS REVIEW" />
+              <Testimonial />
+            </div>
+          </FadeUpTransition>
         </section>
         <section>
           <div className="container relative max-w-full">
