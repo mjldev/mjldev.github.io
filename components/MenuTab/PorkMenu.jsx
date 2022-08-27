@@ -8,20 +8,37 @@ const PorkMenu = () => {
   const nodeRef = useRef();
   const isVisible = useIsVisible(nodeRef, { once: true });
 
+  const menuItems = [
+    {
+      name: "pork pata humba",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "pork sinigang",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "lechon kawali",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "pork sisig",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+  ];
+
   return (
-    <div ref={nodeRef}>
+    <div ref={nodeRef} className="py-10">
       <FadeUpTrail
         open={isVisible}
-        className="flex flex-col items-center text-center py-10"
+        className="flex flex-col items-center text-center gap-y-4 tablet:gap-y-8"
       >
-        <Title title="pork pata humba" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="pork sinigang" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="lechon kawali" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="pork sisig" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
+        {menuItems.map((item, i) => (
+          <div key={i}>
+            <Title title={item.name} />
+            <Text text={item.discription} />
+          </div>
+        ))}
       </FadeUpTrail>
     </div>
   );

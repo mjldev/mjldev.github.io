@@ -10,11 +10,10 @@ const Footer = () => {
           <p className="font-oswald font-bold text-4xl text-personal-textPrimary select-none laptop:text-5xl">
             MJL KITCHEN
           </p>
-          <ul className="flex flex-wrap justify-center gap-x-8">
-            <FooterLink url="#!">our menu</FooterLink>
-            <FooterLink url="#!">blog</FooterLink>
-            <FooterLink url="#!">about us</FooterLink>
-            <FooterLink url="#!">contact us</FooterLink>
+          <ul className="flex flex-wrap justify-center gap-x-16">
+            <FooterLink url="/our-menu">our menu</FooterLink>
+            <FooterLink url="/about-us">about us</FooterLink>
+            <FooterLink url="/contact-us">contact us</FooterLink>
           </ul>
           <SocialMedia/>
           <p className="text-base text-personal-textPrimary">©2022 MJL KITCHEN</p>

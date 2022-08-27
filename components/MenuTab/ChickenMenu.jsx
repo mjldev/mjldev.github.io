@@ -1,27 +1,45 @@
 import React, { useRef } from "react";
 import { useIsVisible } from "react-is-visible";
-import FadeRightTrail from "../Animation/FadeRightTrail";
+import FadeUpTrail from "../Animation/FadeUpTrail";
 import Title from "./Title";
 import Text from "./Text";
 
 const ChickenMenu = () => {
   const nodeRef = useRef();
   const isVisible = useIsVisible(nodeRef, { once: true });
+
+  const menuItems = [
+    {
+      name: "chicken adobo",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "salted egg fried chicken",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "buffalo wings",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "buttered chicken",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+  ];
+
   return (
-    <div ref={nodeRef}>
-      <FadeRightTrail
+    <div ref={nodeRef} className="py-10">
+      <FadeUpTrail
         open={isVisible}
-        className="flex flex-col items-center text-center py-10"
+        className="flex flex-col items-center text-center gap-y-4 tablet:gap-y-8"
       >
-        <Title title="chicken adobo" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="salted egg fried chicken" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="buffalo wings" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="buttered chicken" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-      </FadeRightTrail>
+        {menuItems.map((item, i) => (
+          <div key={i}>
+            <Title title={item.name} />
+            <Text text={item.discription} />
+          </div>
+        ))}
+      </FadeUpTrail>
     </div>
   );
 };

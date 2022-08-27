@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useIsVisible } from "react-is-visible";
-import FadeLeftTrail from "../Animation/FadeLeftTrail";
+import FadeUpTrail from "../Animation/FadeUpTrail";
 import Title from "./Title";
 import Text from "./Text";
 
@@ -8,21 +8,36 @@ const BeefMenu = () => {
   const nodeRef = useRef();
   const isVisible = useIsVisible(nodeRef, { once: true });
 
-  return (
-    <div ref={nodeRef}>
-      <FadeLeftTrail
-        open={isVisible}
-        className="flex flex-col items-center text-center py-10"
-      >
-        <Title title="special beef soup" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="bestik tagalog" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-        <Title title="beef caldereta" />
-        <Text text="Lorem ipsum, dolor sit amet consectetur adipisicing elit." />
-      </FadeLeftTrail>
-    </div>
-  )
-}
+  const menuItems = [
+    {
+      name: "special beef soup",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "bestik tagalog",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      name: "beef caldereta",
+      discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    },
+  ];
 
-export default BeefMenu
+  return (
+    <div ref={nodeRef} className="py-10">
+      <FadeUpTrail
+        open={isVisible}
+        className="flex flex-col items-center text-center gap-y-4 tablet:gap-y-8"
+      >
+        {menuItems.map((item, i) => (
+          <div key={i}>
+            <Title title={item.name} />
+            <Text text={item.discription} />
+          </div>
+        ))}
+      </FadeUpTrail>
+    </div>
+  );
+};
+
+export default BeefMenu;
