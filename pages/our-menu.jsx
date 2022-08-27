@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
-import { MenuTab } from "../components/MenuTab/Tab";
+import { MenuTab } from "../components/MenuTab/MenuTab";
 
 const OurMenu = () => {
   const [currentTab, setCurrentTab] = useState("1");
