@@ -10,7 +10,7 @@ const Footer = () => {
           <p className="font-oswald font-bold text-4xl text-personal-textPrimary select-none laptop:text-5xl">
             MJL KITCHEN
           </p>
-          <ul className="flex flex-wrap justify-center gap-x-16">
+          <ul className="flex flex-wrap justify-center gap-x-8">
             <FooterLink url="/our-menu">our menu</FooterLink>
             <FooterLink url="/about-us">about us</FooterLink>
             <FooterLink url="/contact-us">contact us</FooterLink>
