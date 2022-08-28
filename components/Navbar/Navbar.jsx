@@ -51,7 +51,7 @@ const Navbar = () => {
             </Link>
           </div>
           <ul
-            className={`flex flex-2 flex-col tablet:flex-row tablet:top-0 left-0 justify-center items-center gap-x-16 gap-y-8 bg-inherit w-full tablet:w-auto whitespace-nowrap py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
+            className={`flex flex-2 flex-col tablet:flex-row tablet:top-0 left-0 justify-center items-center gap-x-8 laptop:gap-x-16 gap-y-8 bg-inherit w-full tablet:w-auto whitespace-nowrap py-8 tablet:py-0 absolute tablet:relative z-[-1] tablet:z-auto ${
               dropdown
                 ? "text-2xl top-0 min-h-screen transition-all duration-300 ease-in"
                 : "text-base -top-80"

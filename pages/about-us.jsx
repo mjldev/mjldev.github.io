@@ -67,7 +67,7 @@ const AboutUs = () => {
         </FadeUpTrail>
       </section>
       <section>
-        <div className="container max-w-[90%] tablet:max-w-full relative">
+        <div className="container max-w-[90%] relative">
           <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
             <div
               ref={restaurantRef}
@@ -87,7 +87,7 @@ const AboutUs = () => {
             <div ref={chefRef} className="tablet:row-span-2 flex justify-end">
               <FadeLeftTransition
                 open={chefIsVisible}
-                className=" tablet:h-[80%] tablet:w-[90%]"
+                className=" tablet:h-[70%] tablet:w-[80%]"
               >
                 <img
                   src={chef.src}
