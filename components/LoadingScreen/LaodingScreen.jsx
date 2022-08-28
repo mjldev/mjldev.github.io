@@ -9,9 +9,9 @@ const LaodingScreen = () => {
   return (
     <div
       ref={nodeRef}
-      className="flex justify-center items-center bg-personal-primary w-screen h-screen "
+      className="flex justify-center items-center text-center bg-personal-primary w-screen h-screen "
     >
-      <p className="font-oswald font-bold text-9xl text-white select-none">
+      <p className="font-oswald font-bold text-5xl tablet:text-8xl text-white select-none">
         MJL KITCHEN
       </p>
       <FadeScreen
