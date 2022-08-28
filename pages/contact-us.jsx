@@ -112,7 +112,6 @@ const ContactUs = () => {
       <section>
         <div className="container grid grid-cols-1 laptop:grid-cols-2 max-w-[90%] gap-4 relative">
           <div>
-            {" "}
             <div className="flex flex-col gap-4 border border-personal-neutralDark p-4">
               <div className="flex gap-x-4 items-center">
                 <HiOutlineLocationMarker className="h-5 w-5" />
@@ -134,7 +133,6 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-
           <div className="min-h-[50vh]">
             <img
               src={restaurant.src}
