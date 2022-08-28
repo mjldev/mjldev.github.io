@@ -4,7 +4,7 @@ import Overlay from "../components/Header/Overlay";
 import Title from "../components/Header/Title";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import about_us_banner from "../assets/images/about_us_banner.jpg";
-import restaurant from "../assets/images/restaurant.jpg";
+import restaurant_inside from "../assets/images/restaurant_inside.jpg";
 import chef from "../assets/images/chef.jpg";
 import team from "../assets/images/team.jpg";
 import FadeUpTrail from "../components/Animation/FadeUpTrail";
@@ -31,9 +31,9 @@ const AboutUs = () => {
       <header>
         <div className="w-screen object-contain">
           <div className="relative">
-            <BackgroundImage url={about_us_banner.src} alt="Chicken Adobo" />
+            <BackgroundImage url={about_us_banner.src} alt="About Us" />
             <Overlay />
-            <div className="container flex justify-center flex-col min-h-[80vh] max-w-[90%] relative">
+            <div className="container flex justify-center flex-col min-h-[70vh] max-w-[90%] relative">
               <div className="flex flex-col items-center text-center gap-y-4">
                 <Title heading="About Us" />
               </div>
@@ -47,8 +47,12 @@ const AboutUs = () => {
           className="container flex flex-col gap-4 max-w-[90%] tablet:max-w-[70%] laptop:max-w-[50%] relative"
         >
           <div className="flex flex-col items-center text-center border-y-4 border-y-personal-borderDark py-4">
-            <p className="text-personal-textPrimary font-oswald uppercase font-bold text-4xl desktop:text-5xl">our team</p>
-            <p className="text-personal-textPrimary font-semibold uppercase text-base desktop:text-xl">passion for food</p>
+            <p className="text-personal-textPrimary font-oswald uppercase font-bold text-4xl desktop:text-5xl">
+              our team
+            </p>
+            <p className="text-personal-textPrimary font-semibold uppercase text-base desktop:text-xl">
+              passion for food
+            </p>
           </div>
           <div className="flex flex-col items-start gap-4 tablet:gap-8">
             <p className="text-personal-textPrimary text-base leading-8">
@@ -71,10 +75,10 @@ const AboutUs = () => {
             >
               <FadeRightTransition
                 open={restaurantRefIsVisible}
-                className=" tablet:h-[70%] tablet:w-[100%]"
+                className=" tablet:h-[80%] tablet:w-[100%]"
               >
                 <img
-                  src={restaurant.src}
+                  src={restaurant_inside.src}
                   alt=""
                   className="w-full h-full object-cover"
                 />

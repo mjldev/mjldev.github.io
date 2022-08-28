@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { FaFacebookF } from "react-icons/fa";
 import SocialMedia from "../SocialMedia.jsx/SocialMedia";
 
 const Navbar = () => {
