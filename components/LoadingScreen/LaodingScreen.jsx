@@ -20,7 +20,7 @@ const LaodingScreen = () => {
 
       <FadeScreen
         open={IsVisible}
-        className="flex top-0 absolute backdrop-blur-lg z-10 w-screen h-screen"
+        className="flex top-0 absolute bg-personal-neutralDark z-10 w-screen h-screen"
       ></FadeScreen>
     </div>
   );
