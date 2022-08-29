@@ -12,13 +12,13 @@ import restaurant from "../assets/images/restaurant.jpg";
 
 const ContactUs = () => {
   return (
-    <div className="flex flex-col gap-10 tablet:gap-20 overflow-hidden -mt-20 ">
+    <div className="flex flex-col gap-8 tablet:gap-20 overflow-hidden -mt-20 ">
       <header>
         <div className="w-screen object-contain">
           <div className="relative">
             <BackgroundImage url={contact_us_banner.src} alt="Contact Us" />
             <Overlay />
-            <div className="container flex justify-center flex-col min-h-[70vh] max-w-[90%] relative">
+            <div className="container flex justify-center flex-col min-h-[70vh] relative">
               <div className="flex flex-col items-center text-center gap-y-4">
                 <Title heading="contact us" />
               </div>
@@ -27,8 +27,8 @@ const ContactUs = () => {
         </div>
       </header>
       <section>
-        <div className="container grid grid-cols-1 laptop:grid-cols-2 max-w-[90%] gap-4 relative">
-          <form action="" className="flex flex-col gap-4">
+        <div className="container grid grid-cols-1 laptop:grid-cols-2 gap-8 w-[90%] relative">
+          <form action="" className="flex flex-col gap-8">
             <p className="font-oswald font-bold text-personal-textPrimary text-xl tablet:text-2xl uppercase">
               Always happy to hear from you.
             </p>
@@ -98,19 +98,17 @@ const ContactUs = () => {
               </div>
             </div>
           </form>
-          <div className="min-h-[50vh]">
-            <iframe
-              id="gmap_canvas"
-              src="https://maps.google.com/maps?q=Dap-dap%20Legazpi%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameBorder="0"
-              scrolling="no"
-              className="w-full h-full border"
-            />
-          </div>
+          <iframe
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=Dap-dap%20Legazpi%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameBorder="0"
+            scrolling="no"
+            className="w-full h-full border"
+          />
         </div>
       </section>
       <section>
-        <div className="container grid grid-cols-1 laptop:grid-cols-2 max-w-[90%] gap-4 relative">
+        <div className="container grid grid-cols-1 laptop:grid-cols-2 gap-4 w-[90%] relative">
           <div>
             <div className="flex flex-col gap-4 border border-personal-neutralDark p-4">
               <div className="flex gap-x-4 items-center">
@@ -133,13 +131,11 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-          <div className="min-h-[50vh]">
-            <img
-              src={restaurant.src}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <img
+            src={restaurant.src}
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
       </section>
       <section>

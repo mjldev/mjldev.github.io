@@ -33,7 +33,7 @@ const AboutUs = () => {
           <div className="relative">
             <BackgroundImage url={about_us_banner.src} alt="About Us" />
             <Overlay />
-            <div className="container flex justify-center flex-col min-h-[70vh] max-w-[90%] relative">
+            <div className="container flex justify-center flex-col min-h-[70vh] w-[90%] relative">
               <div className="flex flex-col items-center text-center gap-y-4">
                 <Title heading="About Us" />
               </div>
@@ -44,7 +44,7 @@ const AboutUs = () => {
       <section ref={aboutUsRef}>
         <FadeUpTrail
           open={aboutUsIsVisible}
-          className="container flex flex-col gap-4 max-w-[90%] tablet:max-w-[70%] laptop:max-w-[50%] relative"
+          className="container flex flex-col gap-4 relative w-[90%] tablet:w-[50%]"
         >
           <div className="flex flex-col items-center text-center border-y-4 border-y-personal-borderDark py-4">
             <p className="text-personal-textPrimary font-oswald uppercase font-bold text-4xl desktop:text-5xl">
@@ -67,7 +67,7 @@ const AboutUs = () => {
         </FadeUpTrail>
       </section>
       <section>
-        <div className="container max-w-[90%] relative">
+        <div className="container relative w-[90%]">
           <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
             <div
               ref={restaurantRef}

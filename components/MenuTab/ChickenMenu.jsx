@@ -28,7 +28,7 @@ const ChickenMenu = () => {
   ];
 
   return (
-    <div ref={nodeRef} className="py-10">
+    <div ref={nodeRef} className="py-8 tablet:py-20">
       <FadeUpTrail
         open={isVisible}
         className="flex flex-col items-center text-center gap-y-4 tablet:gap-y-8"

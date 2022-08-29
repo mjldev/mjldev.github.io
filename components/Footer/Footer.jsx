@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="overflow-hidden">
       <section className="container relative">
-        <div className="flex flex-col justify-center text-center gap-y-8 py-10">
+        <div className="flex flex-col justify-center text-center gap-y-8 py-8">
           <p className="font-oswald font-bold text-4xl text-personal-textPrimary select-none laptop:text-5xl">
             MJL KITCHEN
           </p>

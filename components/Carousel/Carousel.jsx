@@ -49,8 +49,8 @@ const Carousel = () => {
                   className="absolute w-full h-full object-cover"
                 />
                 <div className="absolute bg-black opacity-50 w-full h-full" />
-                <div className="container flex justify-center flex-col min-h-screen max-w-[90%] relative">
-                  <div className="flex flex-col items-start gap-y-4">
+                <div className="container flex justify-center flex-col min-h-screen w-[90%] relative">
+                  <div className="flex flex-col items-start gap-y-8">
                     <p className="font-oswald font-bold text-2xl desktop:text-4xl text-white uppercase underline underline-offset-8  decoration-4">
                       must try!
                     </p>

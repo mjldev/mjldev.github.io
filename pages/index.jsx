@@ -38,44 +38,44 @@ export default function Home() {
       </header>
       <main className="flex flex-col gap-10 tablet:gap-20">
         <section ref={orderRef}>
-          <div className="container flex flex-col tablet:flex-row gap-4 max-w-[90%] relative">
+          <div className="container flex flex-col tablet:flex-row gap-4 w-[90%] relative">
             <FadeUpTrail
               open={orderIsVisible}
-              className="flex flex-col justify-center basis-1/3 min-w-[16rem] tablet:max-w-[20rem] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8"
+              className="flex flex-col justify-center basis-1/3 gap-4 tablet:gap-8 px-0 tablet:px-8"
             >
-              <div className="flex flex-col items-center text-center border-y-4 border-y-personal-borderDark py-4">
+              <div className="flex flex-col items-center text-cente border-y-4 border-y-personal-borderDark py-4">
                 <TitlePrimary title="order online" />
                 <TitleSecondary title="pickup/delivery" />
               </div>
               <div className="flex flex-col items-start gap-4 tablet:gap-8">
-                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repudiandae enim consequuntur modi ex repellat ad minus laborum culpa minima." />
+                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repudiandae enim consequuntur modi ex repellat ad minus laborum culpa minima!" />
                 <ButtonLink url="#!">order now</ButtonLink>
               </div>
             </FadeUpTrail>
             <FadeLeftTransition
               open={orderIsVisible}
-              className="basis-3/4 rounded-lg"
+              className="basis-3/4 px-0 tablet:px-8"
             >
               <BackgroundImage url={cook_bg.src} alt="Chef Cooking" />
             </FadeLeftTransition>
           </div>
         </section>
         <section ref={menuRef}>
-          <div className="container flex flex-col tablet:flex-row-reverse gap-4 max-w-[90%] relative">
+          <div className="container flex flex-col tablet:flex-row-reverse gap-4 w-[90%] relative">
             <FadeUpTrail
               open={menuIsVisible}
-              className="flex flex-col justify-center basis-1/3 min-w-[16rem] tablet:max-w-[20rem] gap-4 tablet:gap-8 laptop:mx-4 desktop:mx-8"
+              className="flex flex-col justify-center basis-1/3 gap-4 tablet:gap-8 px-0 tablet:px-8"
             >
               <div className="flex flex-col-reverse items-center text-center border-y-4 border-y-personal-borderDark py-4">
                 <TitlePrimary title="the menu" />
                 <TitleSecondary title="what's on" />
               </div>
               <div className="flex flex-col items-start gap-4 tablet:gap-8">
-                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repudiandae enim consequuntur modi ex repellat ad minus laborum culpa minima." />
+                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repudiandae enim consequuntur modi ex repellat ad minus laborum culpa minima!" />
                 <ButtonLink url="#!">view menu</ButtonLink>
               </div>
             </FadeUpTrail>
-            <FadeRightTransition open={menuIsVisible} className="basis-3/4">
+            <FadeRightTransition open={menuIsVisible} className="basis-3/4 px-0 tablet:px-8">
               <BackgroundImage url={chicken_bg.src} alt="Chicken Adobo" />
             </FadeRightTransition>
           </div>
@@ -83,7 +83,7 @@ export default function Home() {
         <section ref={testimonialRef}>
           <FadeUpTransition
             open={testimonialIsVisible}
-            className="container relative max-w-[90%] border-4 border-personal-neutralDark rounded-lg py-4 tablet:py-8"
+            className="container relative w-[90%] border-4 border-personal-neutralDark rounded-lg py-4 tablet:py-8"
           >
             <div className="flex flex-col justify-center items-center gap-y-4 tablet:gap-y-8 text-center">
               <TitlePrimary title="CUSTOMERS REVIEW" />

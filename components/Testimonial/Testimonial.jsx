@@ -33,13 +33,13 @@ const Testimonial = () => {
     <div className="flex justify-center items-center relative max-w-full laptop:max-w-[50vw] mx-auto">
       <div className="w-full overflow-hidden" ref={viewportRef}>
         <div className="container flex gap-4">
-          {TestimonialItem.map((item, i) => {
+          {TestimonialItem.map((item, index) => {
             return (
               <div
-                key={i}
+                key={index}
                 className="relative min-w-full px-4 laptop:px-16"
               >
-                <div className="flex flex-col justify-center items-center  gap-y-4 relative px-4 overflow-hidden">
+                <div className="flex flex-col justify-center items-center  gap-y-4 relative overflow-hidden">
                   <p className="text-personal-textPrimary text-2xl font-bold uppercase">
                     <span className="text-2xl font-bold">&quot;</span>
                     {item.title}

@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);

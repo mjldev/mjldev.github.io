@@ -31,8 +31,8 @@ const OurMenu = () => {
               <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
             )}
             <Overlay />
-            <div className="container flex justify-center flex-col min-h-[80vh] max-w-[90%] relative">
-              <div className="flex flex-col items-center text-center gap-y-4">
+            <div className="container flex justify-center flex-col min-h-[80vh] relative">
+              <div className="flex flex-col items-center text-center gap-y-8">
                 <Title heading="mjl kitchen menu" />
                 <ButtonPrimary>order online</ButtonPrimary>
               </div>
@@ -81,7 +81,7 @@ const OurMenu = () => {
         </div>
       </section>
       <section>
-        <div className="container max-w-[90%] relative">
+        <div className="container w-[90%] relative">
           {chickenTab && <ChickenMenu />}
           {porkTab && <PorkMenu />}
           {beefTab && <BeefMenu />}
