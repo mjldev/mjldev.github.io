@@ -3,7 +3,6 @@ import contact_us_banner from "../assets/images/contact_us_banner.jpg";
 import ButtonPrimary from "../components/Button/ButtonPrimary";
 import ContactInput from "../components/Contact/ContactInput";
 import BackgroundImage from "../components/Header/BackgroundImage";
-import Overlay from "../components/Header/Overlay";
 import Title from "../components/Header/Title";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import { HiOutlineLocationMarker } from "react-icons/hi";
@@ -17,8 +16,7 @@ const ContactUs = () => {
         <div className="w-screen object-contain">
           <div className="relative">
             <BackgroundImage url={contact_us_banner.src} alt="Contact Us" />
-            <Overlay />
-            <div className="container flex justify-center flex-col min-h-[70vh] relative">
+            <div className="flex justify-center flex-col min-h-[70vh] backdrop-brightness-50 relative">
               <div className="flex flex-col items-center text-center gap-y-4">
                 <Title heading="contact us" />
               </div>
@@ -60,7 +58,7 @@ const ContactUs = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-personal-borderDark p-4"
+                  className="border border-gray-400 p-4"
                   required
                 >
                   <option value="">-SELECT-</option>
@@ -74,7 +72,7 @@ const ContactUs = () => {
                   id=""
                   cols="30"
                   rows="5"
-                  className="border border-personal-borderDark pl-4 py-4"
+                  className="border border-gray-400 pl-4 py-4"
                   required
                 ></textarea>
               </div>
@@ -110,7 +108,7 @@ const ContactUs = () => {
       <section>
         <div className="container grid grid-cols-1 laptop:grid-cols-2 gap-4 w-[90%] relative">
           <div>
-            <div className="flex flex-col gap-4 border border-personal-neutralDark p-4">
+            <div className="flex flex-col gap-4 border border-gray-400 overflow-hidden p-4">
               <div className="flex gap-x-4 items-center">
                 <HiOutlineLocationMarker className="h-5 w-5" />
                 <p className="text-base text-personal-textPrimary">

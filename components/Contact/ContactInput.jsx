@@ -20,7 +20,7 @@ const ContactInput = (props) => {
         id={props.id}
         onClick={() => setFocus(true)}
         required
-        className="border border-personal-borderDark text-personal-textPrimary focus:bg-gray-50 pl-4 py-5"
+        className="border border-gray-400 text-personal-textPrimary focus:bg-gray-50 pl-4 py-5"
       />
     </div>
   );

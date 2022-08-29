@@ -15,8 +15,8 @@ const NewsletterForm = () => {
         alt=""
         className="absolute w-full h-full object-cover"
       />
-      <div className="absolute bg-black opacity-50 w-full h-full" />
-      <FadeUpTrail open={newsletterIsVisible} className="container relative flex flex-col justify-center items-center text-center gap-y-8 max-w-full min-h-[60vh]">
+
+      <FadeUpTrail open={newsletterIsVisible} className="container backdrop-brightness-50 relative flex flex-col justify-center items-center text-center gap-y-8 max-w-full min-h-[60vh]">
         <p className="text-white font-oswald uppercase font-bold text-4xl desktop:text-5xl">
           subscribe to our newsletter
         </p>

@@ -30,16 +30,19 @@ const Testimonial = () => {
   }, [embla, onSelect]);
 
   return (
-    <div className="flex justify-center items-center relative max-w-full laptop:max-w-[50vw] mx-auto">
+    <div className="flex flex-col justify-center items-center gap-y-8 max-w-full laptop:max-w-[60%] relative">
+      <p className="text-personal-textPrimary font-oswald uppercase font-bold text-4xl desktop:text-5xl">
+        customers review
+      </p>
       <div className="w-full overflow-hidden" ref={viewportRef}>
         <div className="container flex gap-4">
           {TestimonialItem.map((item, index) => {
             return (
               <div
                 key={index}
-                className="relative min-w-full px-4 laptop:px-16"
+                className="relative min-w-full px-4 laptop:px-20"
               >
-                <div className="flex flex-col justify-center items-center  gap-y-4 relative overflow-hidden">
+                <div className="flex flex-col items-center text-center  gap-y-4 relative overflow-hidden">
                   <p className="text-personal-textPrimary text-2xl font-bold uppercase">
                     <span className="text-2xl font-bold">&quot;</span>
                     {item.title}

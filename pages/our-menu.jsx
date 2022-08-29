@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Overlay from "../components/Header/Overlay";
 import Title from "../components/Header/Title";
 import pork_bg from "../assets/images/pork_bg.jpg";
 import beef_bg from "../assets/images/beef_bg.jpg";
@@ -30,8 +29,7 @@ const OurMenu = () => {
             {beefTab && (
               <BackgroundImage url={beef_bg.src} alt="Special Beef Soup" />
             )}
-            <Overlay />
-            <div className="container flex justify-center flex-col min-h-[80vh] relative">
+            <div className="flex justify-center flex-col min-h-[80vh] backdrop-brightness-50 relative">
               <div className="flex flex-col items-center text-center gap-y-8">
                 <Title heading="mjl kitchen menu" />
                 <ButtonPrimary>order online</ButtonPrimary>
@@ -40,7 +38,7 @@ const OurMenu = () => {
           </div>
         </div>
       </header>
-      <section className="-mt-24 tablet:-mt-28">
+      <section className="mt-[-109px] tablet:mt-[-110px] desktop:tablet:mt-[-120px]">
         <div className="container flex max-w-full relative">
           <button
             onClick={() => {
@@ -49,7 +47,7 @@ const OurMenu = () => {
             className={`flex-1 font-oswald font-semibold text-xl tablet:text-2xl laptop:text-4xl uppercase py-10 border-t ${
               chickenTab
                 ? "bg-white text-personal-textPrimary"
-                : "bg-transparent text-white"
+                : "bg-transparent text-white hover:backdrop-brightness-75"
             }`}
           >
             chicken
@@ -61,7 +59,7 @@ const OurMenu = () => {
             className={`flex-1 font-oswald font-semibold text-xl tablet:text-2xl laptop:text-4xl uppercase py-10 border-t ${
               porkTab
                 ? "bg-white text-personal-textPrimary"
-                : "bg-transparent text-white"
+                : "bg-transparent text-white hover:backdrop-brightness-75"
             }`}
           >
             pork
@@ -73,7 +71,7 @@ const OurMenu = () => {
             className={`flex-1 font-oswald font-semibold text-xl tablet:text-2xl laptop:text-4xl uppercase py-10 border-t ${
               beefTab
                 ? "bg-white text-personal-textPrimary"
-                : "bg-transparent text-white"
+                : "bg-transparent text-white hover:backdrop-brightness-75"
             }`}
           >
             beef

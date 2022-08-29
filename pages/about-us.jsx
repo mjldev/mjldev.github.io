@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import BackgroundImage from "../components/Header/BackgroundImage";
-import Overlay from "../components/Header/Overlay";
 import Title from "../components/Header/Title";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import about_us_banner from "../assets/images/about_us_banner.jpg";
@@ -27,13 +26,12 @@ const AboutUs = () => {
   const teamRefIsVisible = useIsVisible(teamRef, { once: true });
 
   return (
-    <div className="flex flex-col gap-10 tablet:gap-20 overflow-hidden -mt-20 ">
+    <div className="flex flex-col gap-8 tablet:gap-20 overflow-hidden -mt-20 ">
       <header>
         <div className="w-screen object-contain">
           <div className="relative">
             <BackgroundImage url={about_us_banner.src} alt="About Us" />
-            <Overlay />
-            <div className="container flex justify-center flex-col min-h-[70vh] w-[90%] relative">
+            <div className="flex justify-center flex-col min-h-[70vh] backdrop-brightness-50 relative">
               <div className="flex flex-col items-center text-center gap-y-4">
                 <Title heading="About Us" />
               </div>
@@ -44,25 +42,27 @@ const AboutUs = () => {
       <section ref={aboutUsRef}>
         <FadeUpTrail
           open={aboutUsIsVisible}
-          className="container flex flex-col gap-4 relative w-[90%] tablet:w-[50%]"
+          className="container flex justify-center relative w-[90%]"
         >
-          <div className="flex flex-col items-center text-center border-y-4 border-y-personal-borderDark py-4">
-            <p className="text-personal-textPrimary font-oswald uppercase font-bold text-4xl desktop:text-5xl">
-              our team
-            </p>
-            <p className="text-personal-textPrimary font-semibold uppercase text-base desktop:text-xl">
-              passion for food
-            </p>
-          </div>
-          <div className="flex flex-col items-start gap-4 tablet:gap-8">
-            <p className="text-personal-textPrimary text-base leading-8">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-              atque sit omnis laborum corrupti adipisci minima dicta dolore
-              consequatur voluptate vero autem, doloribus cum amet et fugit
-              culpa delectus molestias reprehenderit explicabo. Illum
-              reprehenderit laudantium odio odit dolorum vitae quae numquam
-              ipsa, repellendus, quibusdam natus dolor! Amet minima saepe ut.
-            </p>
+          <div className="flex flex-col gap-y-4 max-w-[50rem]">
+            <div className="flex flex-col items-center text-center border-y-4 border-y-personal-borderDark py-4">
+              <p className="text-personal-textPrimary font-oswald uppercase font-bold text-4xl desktop:text-5xl">
+                our team
+              </p>
+              <p className="text-personal-textPrimary font-semibold uppercase text-base desktop:text-xl">
+                passion for food
+              </p>
+            </div>
+            <div className="flex flex-col items-start gap-4 tablet:gap-8">
+              <p className="text-personal-textPrimary text-base leading-8">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                atque sit omnis laborum corrupti adipisci minima dicta dolore
+                consequatur voluptate vero autem, doloribus cum amet et fugit
+                culpa delectus molestias reprehenderit explicabo. Illum
+                reprehenderit laudantium odio odit dolorum vitae quae numquam
+                ipsa, repellendus, quibusdam natus dolor! Amet minima saepe ut.
+              </p>
+            </div>
           </div>
         </FadeUpTrail>
       </section>
