@@ -16,22 +16,17 @@ module.exports = {
       },
       colors: {
         personal: {
-          primary: "#F24150",
-          secondary: "#F2B705",
-          accent: "#F244C4",
-          neutralDark: "#261C1F",
-          neutralLight: "#A69286",
-
-          textPrimary: "#261C1F",
-          textSecondary: "#A69286",
-          textHoverPrimary: "#F24150",
-
-          buttonPrimary: "#F24150",
-          buttonSecondary: "#A69286",
-          buttonHoverPrimary: "#D93636",
-          buttonHoverSecondary: "#261C1F",
-
-          borderDark: "#261C1F",
+          textPrimary: "var(--neutralDark)",
+          textSecondary: "var(--neutralLight)",
+          textHoverPrimary: "var(--primary)",
+          buttonPrimary: "var(--primary)",
+          buttonSecondary: "var(--neutralLight)",
+          buttonHoverPrimary: "var(--secondary)",
+          buttonHoverSecondary: "var(--neutralDark)",
+          star: "var(--accent)",
+          borderDark: "var(--neutralDark)",
+          loadingScreenBgPrimary: "var(--primary)",
+          loadingScreenBgSecondary: "var(--neutralDark)",
         },
       },
       container: {

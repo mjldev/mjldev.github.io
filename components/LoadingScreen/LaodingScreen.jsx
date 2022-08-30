@@ -10,7 +10,7 @@ const LaodingScreen = () => {
   return (
     <div
       ref={nodeRef}
-      className="flex justify-center items-center text-center bg-personal-primary w-screen h-screen"
+      className="flex justify-center items-center text-center bg-personal-loadingScreenBgPrimary w-screen h-screen"
     >
       <FadeUpTransition open={IsVisible}>
         <p className="font-oswald font-bold text-5xl tablet:text-8xl text-white select-none">
@@ -20,7 +20,7 @@ const LaodingScreen = () => {
 
       <FadeScreen
         open={IsVisible}
-        className="flex top-0 absolute bg-personal-neutralDark z-10 w-screen h-screen"
+        className="flex top-0 absolute bg-personal-loadingScreenBgSecondary z-10 w-screen h-screen"
       ></FadeScreen>
     </div>
   );

@@ -41,21 +41,18 @@ export default function Home() {
           <div className="container flex flex-col laptop:flex-row gap-8 w-[90%] relative">
             <FadeUpTrail
               open={orderIsVisible}
-              className="flex flex-col justify-center basis-2/6 laptop:min-w-[25rem] gap-4 tablet:gap-8 px-0 laptop:px-8"
+              className="flex flex-col justify-center basis-1/3 laptop:min-w-[25rem] gap-4 tablet:gap-8"
             >
               <div className="flex flex-col items-center text-cente border-y-4 border-y-personal-borderDark py-4">
                 <TitlePrimary title="order online" />
                 <TitleSecondary title="pickup/delivery" />
               </div>
               <div className="flex flex-col items-start gap-4 tablet:gap-8">
-                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quia ipsum illo provident molestias doloremque non eligendi. Facilis, harum, perspiciatis dolorem quia eos quisquam quis, inventore praesentium dolores corrupti numquam." />
+                <Text text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum suscipit quo tempore sed maiores, aliquam facilis reprehenderit, similique rem, obcaecati vel dolorum expedita ut labore repudiandae repellat doloribus nihil omnis id ea. Nostrum modi maxime expedita sapiente vel similique optio minima cum dolore eaque nemo placeat, eligendi necessitatibus harum dolorum." />
                 <ButtonLink url="#!">order now</ButtonLink>
               </div>
             </FadeUpTrail>
-            <FadeLeftTransition
-              open={orderIsVisible}
-              className="basis-4/6"
-            >
+            <FadeLeftTransition open={orderIsVisible} className="basis-2/3">
               <BackgroundImage url={cook_bg.src} alt="Chef Cooking" />
             </FadeLeftTransition>
           </div>
@@ -64,18 +61,18 @@ export default function Home() {
           <div className="container flex flex-col laptop:flex-row-reverse gap-8 w-[90%] relative">
             <FadeUpTrail
               open={menuIsVisible}
-              className="flex flex-col justify-center basis-2/6 laptop:min-w-[25rem] gap-4 tablet:gap-8 px-0 laptop:px-8"
+              className="flex flex-col justify-center basis-1/3 laptop:min-w-[25rem] gap-4 tablet:gap-8"
             >
               <div className="flex flex-col-reverse items-center text-center border-y-4 border-y-personal-borderDark py-4">
                 <TitlePrimary title="the menu" />
                 <TitleSecondary title="what's on" />
               </div>
               <div className="flex flex-col items-start gap-4 tablet:gap-8">
-                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quia ipsum illo provident molestias doloremque non eligendi. Facilis, harum, perspiciatis dolorem quia eos quisquam quis, inventore praesentium dolores corrupti numquam." />
+                <Text text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum suscipit quo tempore sed maiores, aliquam facilis reprehenderit, similique rem, obcaecati vel dolorum expedita ut labore repudiandae repellat doloribus nihil omnis id ea. Nostrum modi maxime expedita sapiente vel similique optio minima cum dolore eaque nemo placeat, eligendi necessitatibus harum dolorum." />
                 <ButtonLink url="#!">view menu</ButtonLink>
               </div>
             </FadeUpTrail>
-            <FadeRightTransition open={menuIsVisible} className="basis-4/6">
+            <FadeRightTransition open={menuIsVisible} className="basis-2/3">
               <BackgroundImage url={chicken_adobo.src} alt="Chicken Adobo" />
             </FadeRightTransition>
           </div>
