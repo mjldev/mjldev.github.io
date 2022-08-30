@@ -60,9 +60,6 @@ const Navbar = () => {
             <NavLink onClick={() => setDropdown(false)} url="/our-menu">
               our menu
             </NavLink>
-            <NavLink onClick={() => setDropdown(false)} url="/blog">
-              blog
-            </NavLink>
             <NavLink onClick={() => setDropdown(false)} url="/about-us">
               about us
             </NavLink>

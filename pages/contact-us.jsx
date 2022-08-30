@@ -101,7 +101,7 @@ const ContactUs = () => {
             src="https://maps.google.com/maps?q=Dap-dap%20Legazpi%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"
             frameBorder="0"
             scrolling="no"
-            className="w-full h-full border"
+            className="w-full h-full min-h-[50vh]"
           />
         </div>
       </section>
@@ -132,7 +132,7 @@ const ContactUs = () => {
           <img
             src={restaurant.src}
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full min-h-[50vh] object-cover"
           />
         </div>
       </section>
